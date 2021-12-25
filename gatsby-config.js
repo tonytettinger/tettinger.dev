@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "TonyTettinger.com",
+    description: "Tony Tettingers' Blog"
   },
   plugins: [
     "gatsby-plugin-emotion",
@@ -23,21 +24,22 @@ module.exports = {
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-theme-ui",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: "@chakra-ui/gatsby-plugin",
       options: {
-        name: "images",
-        path: "./src/images/",
+        resetCSS: true,
       },
-      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: `posts`,
+        path: `${__dirname}/posts`,
       },
-      __key: "pages",
+      __key: "posts"
     },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp"
   ],
 };
