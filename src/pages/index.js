@@ -1,27 +1,44 @@
 import * as React from "react"
-import "../components/layout"
-import Layout from "../components/layout";
-import Seo from "../components/seo"
 import { graphql } from "gatsby";
-import { Link } from "gatsby";
-import { Heading, VStack } from "@chakra-ui/react";
+import { Text, Icon, Heading, ListIcon, LinkOverlay, LinkBox, List, ListItem, Flex, chakra, Container, VStack } from "@chakra-ui/react";
+import { GiBookmarklet, GiIvoryTusks } from 'react-icons/gi'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const IndexPage = ({data}) => {
   const posts = data.allMdx.nodes
   return(
-    <Layout>
-    <VStack w="full" h="full" p={10} spacing={10} alignItems="center">
-      <Seo title={`Homepage`}/>
-      <Heading as='h1' size='4xl' css={{textAlign: "center"}}>Content</Heading>
+    <>
+      <StaticImage
+        alt="Tony by the ocean"
+        src="../images/tony_tettinger.jpeg"
+        style={{
+          width: "100%",
+          maxHeight: "320px",
+          borderRadius: "0.5rem",
+          objectFit: "contain"  
+        }}
+      />
+      <VStack spacing={4} my={4}>
+      <Text>Hello! I'm Tony Tettinger a Full Stack Web Developer</Text>
+      <Icon as={GiIvoryTusks}/>
+      <Heading as='h2' fontWeight="800" fontSize="xl" css={{textAlign: "center"}} my={6}>Blog Posts</Heading>
+      <Icon as={GiIvoryTusks}/>
+      <List>
       {posts.map((post) => {
         return (
-            <Link to={post.slug} key={post.slug}>
-              <h2>{post.frontmatter.title}</h2>
-            </Link>
+          <LinkBox key={post.slug} _hover={{color: "#25BFEB"}}>
+            <LinkOverlay href={`/blog/${post.slug}`} >
+                <Flex as={ListItem} align="center">
+                  <ListIcon as={GiBookmarklet} />
+                  {post.frontmatter.title} {post.frontmatter.date}
+                 </Flex>
+            </LinkOverlay>
+          </LinkBox>
         )
       })}
+      </List>
       </VStack>
-    </Layout>
+      </>
   )
 }
 
@@ -31,6 +48,7 @@ export const pageQuery = graphql`
     nodes {
       frontmatter {
         title
+        date
       }
       slug
     }
