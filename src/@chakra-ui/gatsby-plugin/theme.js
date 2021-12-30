@@ -19,7 +19,8 @@ const theme = {
     body: 'Manrope, sans-serif'
   },
   colors: {
-    bgColor: "#2D3239"
+    bgColor: "#2D3239",
+    linkColor: "#25BFEB"
   },
   styles: {
     global: (props) => ({
@@ -29,6 +30,12 @@ const theme = {
         fontSize: "lg",
         color: "#fff",
         backgroundColor: 'bgColor',
+      },
+      'a': {
+        color: 'linkColor'
+      },
+      'a:hover': {
+        textDecoration: 'underline'
       },
       '.blog-post main > *': {
         width: "100%",
