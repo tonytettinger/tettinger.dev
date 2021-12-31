@@ -22,13 +22,13 @@ const Nav = (props) => {
   fontSize='2xl'
   fontWeight='extrabold'>TonyTettinger</Text>
       <Flex ml={4} as={Link} href='https://github.com/tonytettinger' isExternal>
-        <Icon sx={{transition: 'all .15s ease-in'}} _hover={{transform: 'scale(1.2)'}} as={SiGithub} mx='2px' />
+        <Icon sx={{transition: 'all .25s ease-in'}} _hover={{transform: 'scale(1.2)'}} as={SiGithub} mx='2px' />
       </Flex>
       <Flex ml={4} as={Link} href='https://www.linkedin.com/in/antaltettinger/' isExternal>
-        <Icon sx={{transition: 'all .15s ease-in'}} _hover={{transform: 'scale(1.2)'}} ml={4} as={SiLinkedin} mx='2px' />
+        <Icon sx={{transition: 'all .25s ease-in'}} _hover={{transform: 'scale(1.2)'}} ml={4} as={SiLinkedin} mx='2px' />
       </Flex>
       <Flex ml={4} as={Link} href='https://twitter.com' isExternal>
-        <Icon sx={{transition: 'all .15s ease-in'}} _hover={{transform: 'scale(1.2)'}} as={SiTwitter} mx='2px' />
+        <Icon sx={{transition: 'all .25s ease-in'}} _hover={{transform: 'scale(1.2)'}} as={SiTwitter} mx='2px' />
       </Flex>
     </Flex>
 

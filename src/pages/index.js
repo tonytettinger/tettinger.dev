@@ -1,7 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby";
 import { Text, Icon, Heading, ListIcon, LinkOverlay, LinkBox, List, ListItem, Flex, chakra, Container, VStack } from "@chakra-ui/react";
-import { GiBookmarklet, GiIvoryTusks } from 'react-icons/gi'
+import { GiBookmarklet } from 'react-icons/gi'
+import { FaCode } from 'react-icons/fa'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const IndexPage = ({data}) => {
@@ -20,9 +21,8 @@ const IndexPage = ({data}) => {
       />
       <VStack spacing={4} my={4}>
       <Text>Hello! I'm Tony Tettinger a Full Stack Web Developer</Text>
-      <Icon as={GiIvoryTusks}/>
+      <Icon as={FaCode}/>
       <Heading as='h2' fontWeight="800" fontSize="xl" css={{textAlign: "center"}} my={6}>Blog Posts</Heading>
-      <Icon as={GiIvoryTusks}/>
       <List>
       {posts.map((post) => {
         return (

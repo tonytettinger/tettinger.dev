@@ -4,11 +4,11 @@ import Nav from './nav'
 
 const Layout = ({children}) => {
   return(
-          <Grid as="article" minHeight="100%" w="100%" gridTemplateColumns="100%" gridTemplateRows="auto 1fr auto" centerContent>
+          <Grid as="article" minHeight="100%" w="100%" gridTemplateColumns="100%" gridTemplateRows="auto 1fr auto">
          
              <Nav ml="auto" mr="auto"/>
 
-            <Container as="main" w="100%" h="100%" centerContent minWidth={["0", "0","0", "724px"]}>
+            <Container as="main" w="100%" h="100%" minWidth={["0", "0","0", "724px"]}>
                   {children}
             </Container>
 

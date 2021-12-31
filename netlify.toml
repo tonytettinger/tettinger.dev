@@ -1,0 +1,6 @@
+[build]
+  functions = "functions"
+[dev]
+  autoLaunch = false
+[settings]
+  ID="ddc5ffac-8ac7-4ed3-b8a7-d59bced08828"
