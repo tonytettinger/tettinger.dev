@@ -63,7 +63,7 @@ const BlogPostFactory = ({data}) => {
       <Heading as="h1" my={4}>{post.frontmatter.title}</Heading>
       <VStack spacing={4} my={4}>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <Flex align="center" _hover={{cursor: "pointer"}}><Icon onClick={() => handleUpdate(postId)} as={FaHeart} sx={{transition: 'all .25s ease-in'}} color={ updatingLikes ? 'gray' : 'red.500'} mr={4} /><Box minWidth="75px">{likes}</Box></Flex>
+        <Flex align="center" _hover={{cursor: "pointer"}}><Icon onClick={() => handleUpdate(postId)} as={FaHeart} sx={{transition: 'all .25s ease-in'}} color={ updatingLikes ? 'gray' : 'red.500'} mr={4} /><Box minWidth="75px">{likes ? likes : '' }</Box></Flex>
       </VStack>
     </>
   )

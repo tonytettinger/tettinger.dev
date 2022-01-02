@@ -37,8 +37,8 @@ const Nav = (props) => {
           mt={["4", "4", "0"]}
           basis={["100%", "100%", "auto"]}
         >
-          <Button as={Link} colorScheme="gray" variant="outline" size="xs" mr={2} to="/about">About</Button>
-          <Button as={Link} colorScheme="gray" variant="outline" size="xs" to="/contact">Contact</Button>
+          <Button as={Link} colorScheme="gray" variant="outline" size="xs" mr={2} href="/about">About</Button>
+          <Button as={Link} colorScheme="gray" variant="outline" size="xs" href="/contact">Contact</Button>
         </Flex>
     </Flex>
   );

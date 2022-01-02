@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import { Text, Icon, Heading, ListIcon, LinkOverlay, LinkBox, List, ListItem, Flex, chakra, Container, VStack } from "@chakra-ui/react";
+import { Text, Icon, Heading, ListIcon, LinkOverlay, LinkBox, List, ListItem, Flex, VStack } from "@chakra-ui/react";
 import { GiBookmarklet } from 'react-icons/gi'
 import { FaCode } from 'react-icons/fa'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -20,7 +20,7 @@ const IndexPage = ({data}) => {
         }}
       />
       <VStack spacing={4} my={4}>
-      <Text>Hello! I'm Tony Tettinger a Full Stack Web Developer</Text>
+      <Text>Hello! I'm Antal 'Tony' Tettinger a Full Stack Web Developer.</Text>
       <Icon as={FaCode}/>
       <Heading as='h2' fontWeight="800" fontSize="xl" css={{textAlign: "center"}} my={6}>Blog Posts</Heading>
       <List>
