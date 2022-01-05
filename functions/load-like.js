@@ -12,7 +12,6 @@ exports.handler = async(event) => {
         }
       }
     }
-    
     `,
     variables: {
         "likes": [

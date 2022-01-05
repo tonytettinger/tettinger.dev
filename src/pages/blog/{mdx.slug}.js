@@ -14,12 +14,11 @@ const BlogPostFactory = ({data}) => {
   const updatedLike = useRef(false)
   const post = data.mdx
   const postId = post.id
-  
   React.useEffect(() => {
-    loadLikes()
-  })
+    loadLikes(postId)
+  },[])
 
-  async function loadLikes() {
+  async function loadLikes(postId) {
     await fetch(
       '/.netlify/functions/load-like',{
         method: 'POST',
@@ -32,7 +31,6 @@ const BlogPostFactory = ({data}) => {
   }
 
   const handleUpdate = (postId) => {
-    console.log()
     if(updatedLike.current) return
     updatedLike.current = true
 
