@@ -1,14 +1,16 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import { Text, Icon, Heading, ListIcon, LinkOverlay, LinkBox, List, ListItem, Flex, VStack } from "@chakra-ui/react";
+import { Text, Box, Icon, Heading, ListIcon, LinkOverlay, LinkBox, List, ListItem, Flex, VStack } from "@chakra-ui/react";
 import { GiBookmarklet } from 'react-icons/gi'
 import { FaCode } from 'react-icons/fa'
+import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const IndexPage = ({data}) => {
   const posts = data.allMdx.nodes
   return(
     <>
+    <Box style={{position: "relative"}}>
       <StaticImage
         alt="Tony by the ocean"
         src="../images/tony_tettinger.jpeg"
@@ -16,9 +18,16 @@ const IndexPage = ({data}) => {
           width: "100%",
           maxHeight: "320px",
           borderRadius: "0.5rem",
-          objectFit: "contain"  
+          objectFit: "contain", 
         }}
       />
+      <Box style={{position: "absolute", right: "10%", top: "10%", backgroundColor: "transparent" }}> 
+        <Icon as={DiHtml5} w={8} h={8} color="gray.900"/>
+        <Icon as={DiCss3} w={8} h={8} color="gray.900"/>
+        <Icon as={DiJavascript1} w={8} h={8} color="gray.900"/>
+        <Icon as={DiReact} w={8} h={8} color="gray.900"/>
+      </Box>
+    </Box>
       <VStack spacing={4} my={4}>
       <Text>Hello! I'm Antal 'Tony' Tettinger a Full Stack Web Developer.</Text>
       <Icon as={FaCode}/>

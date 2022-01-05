@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useRef} from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Heading, Flex } from "@chakra-ui/react";
@@ -11,7 +11,7 @@ const ChakraImage = chakra(GatsbyImage)
 
 const BlogPostFactory = ({data}) => {
   const [likes, setLikes] = React.useState(0)
-  const [updatingLikes, setUpdatingLikes] = React.useState(false)
+  const updatedLike = useRef(false)
   const post = data.mdx
   const postId = post.id
   
@@ -32,9 +32,9 @@ const BlogPostFactory = ({data}) => {
   }
 
   const handleUpdate = (postId) => {
-
-    if(updatingLikes) return
-    setUpdatingLikes(true)
+    console.log()
+    if(updatedLike.current) return
+    updatedLike.current = true
 
     fetch('/.netlify/functions/add-like', {
       method: 'POST',
@@ -44,7 +44,6 @@ const BlogPostFactory = ({data}) => {
     })
     .then((r)=>r.json())
     .then((data)=> {
-      setUpdatingLikes(false)
       setLikes(data.updated.count)
     });
     
@@ -63,7 +62,9 @@ const BlogPostFactory = ({data}) => {
       <Heading as="h1" my={4}>{post.frontmatter.title}</Heading>
       <VStack spacing={4} my={4}>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <Flex align="center" _hover={{cursor: "pointer"}}><Icon onClick={() => handleUpdate(postId)} as={FaHeart} sx={{transition: 'all .25s ease-in'}} color={ updatingLikes ? 'gray' : 'red.500'} mr={4} /><Box minWidth="75px">{likes ? likes : '' }</Box></Flex>
+        { likes ? 
+        <Flex align="center" _hover={{cursor: "pointer"}}><Icon onClick={() => handleUpdate(postId)} as={FaHeart} sx={{transition: 'all .25s ease-in'}} color={ updatedLike.current ? 'red.200' : 'red.500'} mr={4} /><Box minWidth="75px">{likes}</Box></Flex>
+        : ''}
       </VStack>
     </>
   )
