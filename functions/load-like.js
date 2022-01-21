@@ -2,6 +2,7 @@ const { hasuraRequest } = require('./utils/hasura')
 
 exports.handler = async(event) => {
   const { postId } = JSON.parse(event.body)
+  const postIdNum = parseInt(postId)
   const hasuraPromise = hasuraRequest({
     query:`
     mutation MyMutation($likes: [likes_insert_input!]!) {
@@ -16,7 +17,7 @@ exports.handler = async(event) => {
     variables: {
         "likes": [
           {
-          "id" : postId,
+          "id" : postIdNum,
           "count": 0
         }
         ]

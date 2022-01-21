@@ -21,11 +21,11 @@ const IndexPage = ({data}) => {
           objectFit: "contain", 
         }}
       />
-      <Box style={{position: "absolute", right: "10%", top: "10%", backgroundColor: "transparent" }}> 
-        <Icon as={DiHtml5} w={8} h={8} color="gray.900"/>
-        <Icon as={DiCss3} w={8} h={8} color="gray.900"/>
-        <Icon as={DiJavascript1} w={8} h={8} color="gray.900"/>
-        <Icon as={DiReact} w={8} h={8} color="gray.900"/>
+      <Box style={{position: "absolute", right: "8%", top: "40%", backgroundColor: "transparent" }}> 
+        <Icon as={DiHtml5} w={12} h={12} color="gray.900"/>
+        <Icon as={DiJavascript1} w={12} h={12} color="gray.900"/>
+        <Icon as={DiReact} w={12} h={12} color="gray.900"/>
+        <Icon as={DiCss3} w={12} h={12} color="gray.900"/>
       </Box>
     </Box>
       <VStack spacing={4} my={4}>

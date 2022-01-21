@@ -15,8 +15,12 @@ const BlogPostFactory = ({data}) => {
   const post = data.mdx
   const postId = post.id
   React.useEffect(() => {
-    loadLikes(postId)
-  },[])
+    async function getLikes () {
+      await loadLikes(postId)
+    }
+
+    getLikes()
+  },[postId])
 
   async function loadLikes(postId) {
     await fetch(
@@ -30,20 +34,20 @@ const BlogPostFactory = ({data}) => {
      .then((data) => setLikes(data.likes.returning[0].count))
   }
 
-  const handleUpdate = (postId) => {
+  const handleUpdate = async (postId) => {
     if(updatedLike.current) return
     updatedLike.current = true
-
-    fetch('/.netlify/functions/add-like', {
+    const postIdNum = parseInt(postId)
+    await fetch('/.netlify/functions/add-like', {
       method: 'POST',
       body: JSON.stringify({
-        postId,
+        postIdNum 
       }),
     })
     .then((r)=>r.json())
     .then((data)=> {
-      setLikes(data.updated.count)
-    });
+      setLikes(data.update_likes_by_pk.count)
+    }).catch(err => console.log(err));
     
     }
 
@@ -60,7 +64,7 @@ const BlogPostFactory = ({data}) => {
       <Heading as="h1" my={4}>{post.frontmatter.title}</Heading>
       <VStack spacing={4} my={4}>
         <MDXRenderer>{post.body}</MDXRenderer>
-        { likes ? 
+        { (likes || likes === 0) ? 
         <Flex align="center" _hover={{cursor: "pointer"}}><Icon onClick={() => handleUpdate(postId)} as={FaHeart} sx={{transition: 'all .25s ease-in'}} color={ updatedLike.current ? 'red.200' : 'red.500'} mr={4} /><Box minWidth="75px">{likes}</Box></Flex>
         : ''}
       </VStack>
