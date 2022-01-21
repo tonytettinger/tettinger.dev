@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon, Flex, Link, Button, Text } from "@chakra-ui/react";
-import { SiTwitter, SiLinkedin, SiGithub } from 'react-icons/si'
+import { SiLinkedin, SiGithub } from 'react-icons/si'
 
 const Nav = (props) => {
 
@@ -26,9 +26,6 @@ const Nav = (props) => {
       </Flex>
       <Flex ml={4} as={Link} href='https://www.linkedin.com/in/antaltettinger/' isExternal>
         <Icon sx={{transition: 'all .25s ease-in'}} _hover={{transform: 'scale(1.2)'}} ml={4} as={SiLinkedin} mx='2px' />
-      </Flex>
-      <Flex ml={4} as={Link} href='https://twitter.com' isExternal>
-        <Icon sx={{transition: 'all .25s ease-in'}} _hover={{transform: 'scale(1.2)'}} as={SiTwitter} mx='2px' />
       </Flex>
     </Flex>
 
