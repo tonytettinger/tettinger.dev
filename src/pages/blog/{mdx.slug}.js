@@ -5,12 +5,13 @@ import { Heading, Flex } from "@chakra-ui/react";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { chakra, VStack, Icon, Box } from "@chakra-ui/react"
 import { FaHeart } from 'react-icons/fa'
+import Like from '../../components/Likes'
 
 
 const ChakraImage = chakra(GatsbyImage)
 
 const BlogPostFactory = ({data}) => {
-  const [likes, setLikes] = React.useState(0)
+  const [likes, setLikes] = React.useState('')
   const updatedLike = useRef(false)
   const post = data.mdx
   const postId = post.id
@@ -64,9 +65,8 @@ const BlogPostFactory = ({data}) => {
       <Heading as="h1" my={4}>{post.frontmatter.title}</Heading>
       <VStack spacing={4} my={4}>
         <MDXRenderer>{post.body}</MDXRenderer>
-        { (likes || likes === 0) ? 
-        <Flex align="center" _hover={{cursor: "pointer"}}><Icon onClick={() => handleUpdate(postId)} as={FaHeart} sx={{transition: 'all .25s ease-in'}} color={ updatedLike.current ? 'red.200' : 'red.500'} mr={4} /><Box minWidth="75px">{likes}</Box></Flex>
-        : ''}
+        <Flex align="center" _hover={{cursor: "pointer"}}><Icon onClick={() => handleUpdate(postId)} as={FaHeart} sx={{transition: 'all .25s ease-in'}} color={ updatedLike.current ? 'red.200' : 'red.500'} mr={4} /><Box minWidth="75px">{(likes || likes === 0) ? likes: "Loading likes..."}</Box></Flex>
+
       </VStack>
     </>
   )
