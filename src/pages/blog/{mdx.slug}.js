@@ -5,8 +5,6 @@ import { Heading, Flex } from "@chakra-ui/react";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { chakra, VStack, Icon, Box } from "@chakra-ui/react"
 import { FaHeart } from 'react-icons/fa'
-import Like from '../../components/Likes'
-
 
 const ChakraImage = chakra(GatsbyImage)
 
