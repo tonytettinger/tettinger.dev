@@ -12,7 +12,7 @@ const BlogPostFactory = ({data}) => {
   const [likes, setLikes] = React.useState('')
   const updatedLike = useRef(false)
   const post = data.mdx
-  const postId = post.id
+  const postId = post.frontmatter.post_id
   React.useEffect(() => {
     async function getLikes () {
       await loadLikes(postId)
@@ -73,8 +73,8 @@ const BlogPostFactory = ({data}) => {
 export const query = graphql`
 query BlogPostById($id: String) {
   mdx(id: {eq: $id}) {
-    id
     frontmatter {
+      post_id
       title
       hero_image_alt
       hero_image_credit_link

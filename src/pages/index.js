@@ -1,8 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby";
 import { Text, Box, Icon, Heading, ListIcon, LinkOverlay, LinkBox, List, ListItem, Flex, VStack } from "@chakra-ui/react";
-import { GiBookmarklet } from 'react-icons/gi'
-import { FaCode } from 'react-icons/fa'
+import { FaCode, FaChevronRight } from 'react-icons/fa'
 import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -29,7 +28,7 @@ const IndexPage = ({data}) => {
       </Box>
     </Box>
       <VStack spacing={4} my={4}>
-      <Text>Hello! I'm Antal 'Tony' Tettinger a Full Stack Web Developer.</Text>
+      <Text>Hello there! I'm Antal Tettinger, aka Tony. I'm a full-stack web developer who loves to create great user experiences and appreciates elegant and practical solutions with technology. Thank you for reading my blog!</Text>
       <Icon as={FaCode}/>
       <Heading as='h2' fontWeight="800" fontSize="xl" css={{textAlign: "center"}} my={6}>Blog Posts</Heading>
       <List>
@@ -38,7 +37,7 @@ const IndexPage = ({data}) => {
           <LinkBox key={post.slug} _hover={{color: "#25BFEB"}}>
             <LinkOverlay href={`/blog/${post.slug}`} >
                 <Flex as={ListItem} align="center">
-                  <ListIcon as={GiBookmarklet} />
+                  <ListIcon as={FaChevronRight}/>
                   {post.frontmatter.title} {post.frontmatter.date}
                  </Flex>
             </LinkOverlay>
@@ -53,7 +52,7 @@ const IndexPage = ({data}) => {
 
 export const pageQuery = graphql`
 {
-  allMdx(sort: {fields: [frontmatter___title], order: ASC}) {
+  allMdx(sort: {fields: [frontmatter___title], order: DESC}) {
     nodes {
       frontmatter {
         title
