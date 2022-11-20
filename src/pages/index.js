@@ -4,6 +4,7 @@ import { Text, Box, Icon, Heading, ListIcon, LinkOverlay, LinkBox, List, ListIte
 import { FaCode, FaChevronRight } from 'react-icons/fa'
 import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
 import { StaticImage } from 'gatsby-plugin-image'
+import "@fontsource/zilla-slab"
 
 const IndexPage = ({data}) => {
   const posts = data.allMdx.nodes
@@ -28,7 +29,7 @@ const IndexPage = ({data}) => {
       </Box>
     </Box>
       <VStack spacing={4} my={4}>
-      <Text>Hello there! I'm Antal Tettinger, aka Tony. I'm a full-stack web developer who loves to create great user experiences and appreciates elegant and practical solutions with technology. Thank you for reading my blog!</Text>
+      <Text>Hello there! 😄 I'm Antal Tettinger, aka Tony. I'm a Full-Stack Software Engineer (aka "I'm just a cook") who loves to create great user experiences and appreciates elegant and practical solutions with technology.</Text>
       <Icon as={FaCode}/>
       <Heading as='h2' fontWeight="800" fontSize="xl" css={{textAlign: "center"}} my={6}>Blog Posts</Heading>
       <List>

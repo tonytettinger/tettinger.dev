@@ -16,6 +16,7 @@ const components = {
 	pre: props => {
 		const className = props.children.props.className || "";
 		const matches = className.match(/language-(?<lang>.*)/);
+		const addStyle = {"borderRadius": "0.5rem", "padding": "1rem", "maxWidth": "100%", "overflowX": "auto"}
 		return (
 			<Highlight
 				{...defaultProps}
@@ -33,7 +34,8 @@ const components = {
 					getLineProps,
 					getTokenProps
 				}) => (
-					<pre className={className} style={style}>
+					<pre className={className} style={{...style, ...addStyle}}>
+						{JSON.stringify(style)}
 						{tokens.map((line, i) => (
 							<div {...getLineProps({ line, key: i })}>
 								{line.map((token, key) => (
@@ -46,6 +48,7 @@ const components = {
 			</Highlight>
 		);
 	},
+	code: props => <pre style={{ color: "green" }} {...props} />,
 	wrapper: ({ children }) => <>{children}</>
 };
 export const wrapRootElement = ({ element }) => {

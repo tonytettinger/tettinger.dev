@@ -9,6 +9,7 @@ const ContactPage = () => {
   return (
     <VStack textAlign="center">
     <Heading as="h1">Contact Page</Heading>
+    <Heading as="h2" size="sm">Preferred way to contact me: via Linkedin</Heading>
     <form id="contactform" method="post" action="https://getform.io/f/fca490da-1af0-4ff8-811f-dcbd7276c374">
     <FormControl>
       <FormLabel htmlFor='name'>Name</FormLabel>

@@ -22,6 +22,7 @@
     "@emotion/styled": "^11.6.0",
     "@fontsource/manrope": "^4.5.1",
     "@fontsource/rammetto-one": "^4.5.0",
+    "@fontsource/zilla-slab": "^4.5.9",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "framer-motion": "^5.5.5",

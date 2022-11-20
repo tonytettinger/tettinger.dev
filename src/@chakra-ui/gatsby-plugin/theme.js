@@ -16,7 +16,7 @@ const theme = {
   },
   fonts: {
     heading: 'Manrope, sans-serif',
-    body: 'Manrope, sans-serif'
+    body: `'Zilla Slab', sans-serif`
   },
   colors: {
     bgColor: "#2D3239",
