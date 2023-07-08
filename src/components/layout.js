@@ -1,6 +1,8 @@
-import { Container, Text, Grid } from "@chakra-ui/react"
-import React from "react"
-import Nav from "./nav"
+import React from 'react'
+
+import { Container, Grid, Text } from '@chakra-ui/react'
+
+import Nav from './nav'
 
 const Layout = ({ children }) => {
     return (
@@ -13,12 +15,7 @@ const Layout = ({ children }) => {
         >
             <Nav ml="auto" mr="auto" />
 
-            <Container
-                as="main"
-                w="100%"
-                h="100%"
-                minWidth={["0", "0", "0", "724px"]}
-            >
+            <Container as="main" w="100%" h="100%" minWidth={['0', '0', '0', '724px']}>
                 {children}
             </Container>
 

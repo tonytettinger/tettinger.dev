@@ -1,6 +1,8 @@
-import React from "react"
-import { Icon, Flex, Link, Button, Text } from "@chakra-ui/react"
-import { SiLinkedin, SiGithub } from "react-icons/si"
+import React from 'react'
+
+import { Button, Flex, Icon, Link, Text } from '@chakra-ui/react'
+
+import { SiGithub, SiLinkedin } from 'react-icons/si'
 
 const Nav = (props) => {
     return (
@@ -11,7 +13,7 @@ const Nav = (props) => {
             w="100%"
             mt={6}
             mb={6}
-            wrap={["wrap", "wrap", "nowrap"]}
+            wrap={['wrap', 'wrap', 'nowrap']}
             maxWidth="1024px"
             px={4}
             {...props}
@@ -26,15 +28,10 @@ const Nav = (props) => {
                 >
                     TonyTettinger
                 </Text>
-                <Flex
-                    ml={4}
-                    as={Link}
-                    href="https://github.com/tonytettinger"
-                    isExternal
-                >
+                <Flex ml={4} as={Link} href="https://github.com/tonytettinger" isExternal>
                     <Icon
-                        sx={{ transition: "all .25s ease-in" }}
-                        _hover={{ transform: "scale(1.2)" }}
+                        sx={{ transition: 'all .25s ease-in' }}
+                        _hover={{ transform: 'scale(1.2)' }}
                         as={SiGithub}
                         mx="2px"
                     />
@@ -46,8 +43,8 @@ const Nav = (props) => {
                     isExternal
                 >
                     <Icon
-                        sx={{ transition: "all .25s ease-in" }}
-                        _hover={{ transform: "scale(1.2)" }}
+                        sx={{ transition: 'all .25s ease-in' }}
+                        _hover={{ transform: 'scale(1.2)' }}
                         ml={4}
                         as={SiLinkedin}
                         mx="2px"
@@ -55,11 +52,7 @@ const Nav = (props) => {
                 </Flex>
             </Flex>
 
-            <Flex
-                align="center"
-                mt={["4", "4", "0"]}
-                basis={["100%", "100%", "auto"]}
-            >
+            <Flex align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>
                 <Button
                     as={Link}
                     colorScheme="gray"
@@ -70,13 +63,7 @@ const Nav = (props) => {
                 >
                     About
                 </Button>
-                <Button
-                    as={Link}
-                    colorScheme="gray"
-                    variant="outline"
-                    size="xs"
-                    href="/contact"
-                >
+                <Button as={Link} colorScheme="gray" variant="outline" size="xs" href="/contact">
                     Contact
                 </Button>
             </Flex>
