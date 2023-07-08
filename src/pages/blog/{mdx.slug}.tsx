@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import { GatsbyImage, ImageDataLike, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import { Heading } from '@chakra-ui/react'

@@ -5,7 +5,7 @@ import { Container, Grid, Text } from '@chakra-ui/react'
 import Nav from './Nav'
 import Seo from './Seo'
 
-const Layout = ({ children }: any) => {
+const Layout = ({ children }) => {
     return (
         <>
             <Seo />
@@ -23,7 +23,7 @@ const Layout = ({ children }: any) => {
                 </Container>
 
                 <Text as="footer" textAlign="center" fontSize="sm" my={4}>
-                    All rights reserved © Antal Tettinger 2022
+                    All rights reserved © Antal Tettinger 2023
                 </Text>
             </Grid>
         </>
