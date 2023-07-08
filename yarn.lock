@@ -2087,14 +2087,14 @@
   dependencies:
     "@lezer/common" "^0.15.0"
 
-"@lmdb/lmdb-darwin-x64@2.5.2":
-  "integrity" "sha512-KvPH56KRLLx4KSfKBx0m1r7GGGUMXm0jrKmNE7plbHlesZMuPJICtn07HYgQhj1LNsK7Yqwuvnqh1QxhJnF1EA=="
-  "resolved" "https://registry.npmjs.org/@lmdb/lmdb-darwin-x64/-/lmdb-darwin-x64-2.5.2.tgz"
+"@lmdb/lmdb-darwin-arm64@2.5.2":
+  "integrity" "sha512-+F8ioQIUN68B4UFiIBYu0QQvgb9FmlKw2ctQMSBfW2QBrZIxz9vD9jCGqTCPqZBRbPHAS/vG1zSXnKqnS2ch/A=="
+  "resolved" "https://registry.npmjs.org/@lmdb/lmdb-darwin-arm64/-/lmdb-darwin-arm64-2.5.2.tgz"
   "version" "2.5.2"
 
-"@lmdb/lmdb-darwin-x64@2.5.3":
-  "integrity" "sha512-337dNzh5yCdNCTk8kPfoU7jR3otibSlPDGW0vKZT97rKnQMb9tNdto3RtWoGPsQ8hKmlRZpojOJtmwjncq1MoA=="
-  "resolved" "https://registry.npmjs.org/@lmdb/lmdb-darwin-x64/-/lmdb-darwin-x64-2.5.3.tgz"
+"@lmdb/lmdb-darwin-arm64@2.5.3":
+  "integrity" "sha512-RXwGZ/0eCqtCY8FLTM/koR60w+MXyvBUpToXiIyjOcBnC81tAlTUHrRUavCEWPI9zc9VgvpK3+cbumPyR8BSuA=="
+  "resolved" "https://registry.npmjs.org/@lmdb/lmdb-darwin-arm64/-/lmdb-darwin-arm64-2.5.3.tgz"
   "version" "2.5.3"
 
 "@mdx-js/mdx@^1.0.0", "@mdx-js/mdx@^1.6.22":
@@ -2141,9 +2141,9 @@
     "@lezer/lr" "^0.15.4"
     "json5" "^2.2.1"
 
-"@msgpackr-extract/msgpackr-extract-darwin-x64@2.2.0":
-  "integrity" "sha512-vq0tT8sjZsy4JdSqmadWVw6f66UXqUCabLmUVHZwUFzMgtgoIIQjT4VVRHKvlof3P/dMCkbMJ5hB1oJ9OWHaaw=="
-  "resolved" "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-darwin-x64/-/msgpackr-extract-darwin-x64-2.2.0.tgz"
+"@msgpackr-extract/msgpackr-extract-darwin-arm64@2.2.0":
+  "integrity" "sha512-Z9LFPzfoJi4mflGWV+rv7o7ZbMU5oAU9VmzCgL240KnqDW65Y2HFCT3MW06/ITJSnbVLacmcEJA8phywK7JinQ=="
+  "resolved" "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-darwin-arm64/-/msgpackr-extract-darwin-arm64-2.2.0.tgz"
   "version" "2.2.0"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -7797,6 +7797,25 @@
   dependencies:
     "package-json" "^6.3.0"
 
+"lefthook-darwin-arm64@1.4.3":
+  "integrity" "sha512-ZFsgIzN+Z0c4RpMMHU/M4J43XFyXYGZI8r0GG4jqVMX+prDBIb/6vpgMdZxK5IozRUmnfLGQPXcVokE9WBHSOg=="
+  "resolved" "https://registry.npmjs.org/lefthook-darwin-arm64/-/lefthook-darwin-arm64-1.4.3.tgz"
+  "version" "1.4.3"
+
+"lefthook@^1.4.3":
+  "integrity" "sha512-zvhAJ9wDQW7F27XYWRfx72L6LuPLu49be+sRUF+DKku1IGT+x3eHjQ9k70pt65lnEq1X8Xl/Xygm3Kwi/piOYg=="
+  "resolved" "https://registry.npmjs.org/lefthook/-/lefthook-1.4.3.tgz"
+  "version" "1.4.3"
+  optionalDependencies:
+    "lefthook-darwin-arm64" "1.4.3"
+    "lefthook-darwin-x64" "1.4.3"
+    "lefthook-freebsd-arm64" "1.4.3"
+    "lefthook-freebsd-x64" "1.4.3"
+    "lefthook-linux-arm64" "1.4.3"
+    "lefthook-linux-x64" "1.4.3"
+    "lefthook-windows-arm64" "1.4.3"
+    "lefthook-windows-x64" "1.4.3"
+
 "levn@^0.4.1":
   "integrity" "sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ=="
   "resolved" "https://registry.npmjs.org/levn/-/levn-0.4.1.tgz"
@@ -9449,6 +9468,11 @@
   "integrity" "sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA=="
   "resolved" "https://registry.npmjs.org/prepend-http/-/prepend-http-2.0.0.tgz"
   "version" "2.0.0"
+
+"prettier@^3.0.0":
+  "integrity" "sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g=="
+  "resolved" "https://registry.npmjs.org/prettier/-/prettier-3.0.0.tgz"
+  "version" "3.0.0"
 
 "pretty-bytes@^5.3.0", "pretty-bytes@^5.4.1":
   "integrity" "sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg=="
