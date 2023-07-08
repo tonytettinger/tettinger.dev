@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import React from 'react'
 
-import Layout from './src/components/layout'
+import Layout from './src/components/Layout'
 
 export const wrapPageElement = ({ element, props }) => {
     // props provide same data to Layout as Page element will get
@@ -21,7 +21,7 @@ const components = {
             borderRadius: '0.5rem',
             padding: '1rem',
             maxWidth: '100%',
-            overflowX: 'auto',
+            overflowX: 'auto' as const
         }
         return (
             <Highlight

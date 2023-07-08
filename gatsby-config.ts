@@ -1,7 +1,8 @@
 module.exports = {
     siteMetadata: {
         siteUrl: 'https://www.tonytettinger.com',
-        title: 'tonytettinger.com website',
+        title: 'tonytettinger.com blog',
+        description: 'Website of Tony Tettinger'
     },
     plugins: [
         {

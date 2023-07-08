@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 
 import { graphql, useStaticQuery } from 'gatsby'
 
-const SEO = ({ title, description, meta = [] }) => {
+const Seo = () => {
     const { site } = useStaticQuery(graphql`
         {
             site {
@@ -16,33 +16,31 @@ const SEO = ({ title, description, meta = [] }) => {
         }
     `)
 
-    const metaDescription = description || site.siteMetadata.description
-
     return (
         <Helmet
-            title={title}
+            title={site.siteMetadata.title}
             htmlAttributes={{ lang: `en` }}
             titleTemplate={`%s | ${site.siteMetadata.title}`}
             meta={[
                 {
                     name: `description`,
-                    content: metaDescription,
+                    content: site.siteMetadata.description,
                 },
                 {
                     property: `og:title`,
-                    content: title,
+                    content: site.siteMetadata.title,
                 },
                 {
                     property: `og:description`,
-                    content: metaDescription,
+                    content: site.siteMetadata.description,
                 },
                 {
                     property: `og:type`,
                     content: `website`,
                 },
-            ].concat(meta)}
+            ]}
         ></Helmet>
     )
 }
 
-export default SEO
+export default Seo

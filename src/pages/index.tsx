@@ -1,7 +1,7 @@
 import '@fontsource/zilla-slab'
 import * as React from 'react'
 
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import {
@@ -21,8 +21,31 @@ import {
 import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
 import { FaChevronRight, FaCode } from 'react-icons/fa'
 
-const IndexPage = ({ data }) => {
-    const posts = data.allMdx.nodes
+interface Post {
+    slug: string
+    frontmatter: {
+        title: string
+        date: string
+    }
+}
+
+const IndexPage = () => {
+    const data = useStaticQuery(graphql`
+        {
+            allMdx(sort: { fields: [frontmatter___title], order: DESC }) {
+                nodes {
+                    frontmatter {
+                        title
+                        date
+                    }
+                    slug
+                }
+            }
+        }
+    `)
+
+    const posts: Post[] = data.allMdx.nodes
+
     return (
         <>
             <Box style={{ position: 'relative' }}>
@@ -52,9 +75,9 @@ const IndexPage = ({ data }) => {
             </Box>
             <VStack spacing={4} my={4}>
                 <Text>
-                    Hello there! 😄 I'm Antal Tettinger, aka Tony. I'm a Full-Stack Software
+                    Hello there! 😄 I'm Tony Tettinger a Frontend Software
                     Engineer (aka "I'm just a cook") who loves to create great user experiences and
-                    appreciates elegant and practical solutions with technology.
+                    appreciates simple and maintainable solutions. I love to learn about better practices, new technologies and their applications.
                 </Text>
                 <Icon as={FaCode} />
                 <Heading
@@ -84,19 +107,5 @@ const IndexPage = ({ data }) => {
         </>
     )
 }
-
-export const pageQuery = graphql`
-    {
-        allMdx(sort: { fields: [frontmatter___title], order: DESC }) {
-            nodes {
-                frontmatter {
-                    title
-                    date
-                }
-                slug
-            }
-        }
-    }
-`
 
 export default IndexPage

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { Button, Flex, Icon, Link, Text } from '@chakra-ui/react'
+import { Button, Flex, Icon, Link, Text, BoxProps } from '@chakra-ui/react'
 
 import { SiGithub, SiLinkedin } from 'react-icons/si'
 
-const Nav = (props) => {
+const Nav = (props: BoxProps) => {
     return (
         <Flex
             as="nav"
