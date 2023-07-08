@@ -1,8 +1,19 @@
+const path = require('path')
+
+const gatsbyRequiredRules = path.join(
+    process.cwd(),
+    'node_modules',
+    'gatsby',
+    'dist',
+    'utils',
+    'eslint-rules'
+)
+
 module.exports = {
     siteMetadata: {
         siteUrl: 'https://www.tonytettinger.com',
         title: 'tonytettinger.com blog',
-        description: 'Website of Tony Tettinger'
+        description: 'Website of Tony Tettinger',
     },
     plugins: [
         {
@@ -27,6 +38,15 @@ module.exports = {
                     // Optional parameter to honor the Do Not Track feature.
                     respectDNT: true,
                 },
+            },
+        },
+        {
+            resolve: 'gatsby-plugin-eslint',
+            options: {
+                rulePaths: [gatsbyRequiredRules],
+                stages: ['develop'],
+                extensions: ['js', 'jsx', 'ts', 'tsx'],
+                exclude: ['node_modules', 'bower_components', '.cache', 'public'],
             },
         },
         '@chakra-ui/gatsby-plugin',
