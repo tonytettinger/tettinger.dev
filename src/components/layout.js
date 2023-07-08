@@ -12,6 +12,7 @@ const Layout = ({children}) => {
                   {children}
             </Container>
 
+
             <Text as="footer" textAlign="center" fontSize="sm" my={4}>
                   All rights reserved © Antal Tettinger 2022
             </Text>
