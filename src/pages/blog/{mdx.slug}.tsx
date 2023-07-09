@@ -44,7 +44,7 @@ const BlogPostFactory = ({ data }: BlogPostFactoryProps) => {
                 {post.frontmatter.title}
             </Heading>
             <VStack spacing={4} my={4}>
-                <MDXRenderer>{post.body}</MDXRenderer>
+                <MDXRenderer children={post.body} />
             </VStack>
         </>
     )
