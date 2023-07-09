@@ -18,10 +18,17 @@ import {
     VStack,
 } from '@chakra-ui/react'
 
+import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
 import { FaChevronRight, FaCode } from 'react-icons/fa'
 
 import Wave from '../components/motion/Wave'
-import { iconsOverImage } from './constants'
+
+const iconsOverImage = [
+    { icon: DiHtml5 },
+    { icon: DiJavascript1 },
+    { icon: DiReact },
+    { icon: DiCss3 },
+]
 
 interface Post {
     slug: string
