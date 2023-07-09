@@ -91,7 +91,7 @@ const IndexPage = () => {
                     css={{ textAlign: 'center' }}
                     my={6}
                 >
-                    Blog Posts
+                    Entries
                 </Heading>
                 <List>
                     {posts.map((post) => {

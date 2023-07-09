@@ -31,13 +31,15 @@ const BlogPostFactory = ({ data }: BlogPostFactoryProps) => {
     const image = getImage(post.frontmatter.hero_image)
     return (
         <>
-            {image ? <ChakraImage
-                image={image}
-                alt={data.mdx.frontmatter.hero_image_alt}
-                maxH="350px"
-                borderRadius="0.5rem"
-                boxShadow="2xl"
-            /> : null }
+            {image ? (
+                <ChakraImage
+                    image={image}
+                    alt={data.mdx.frontmatter.hero_image_alt}
+                    maxH="350px"
+                    borderRadius="0.5rem"
+                    boxShadow="2xl"
+                />
+            ) : null}
             <Heading as="h1" my={4}>
                 {post.frontmatter.title}
             </Heading>
@@ -59,7 +61,7 @@ export const query = graphql`
                 hero_image_credit_text
                 hero_image {
                     childImageSharp {
-                        gatsbyImageData(formats: [AUTO, WEBP], placeholder: BLURRED)
+                        gatsbyImageData(formats: [AUTO, WEBP])
                     }
                 }
             }
