@@ -1,11 +1,10 @@
-import { MotionProps, motion } from 'framer-motion'
-import React, { ReactNode } from 'react'
+import { motion } from 'framer-motion'
+import React, { PropsWithChildren } from 'react'
 
-interface WaveProps extends MotionProps {
-    children: ReactNode
+interface WaveProps {
     delay: number
 }
-const Wave = ({ children, delay }: WaveProps) => {
+const Wave = ({ children, delay }: PropsWithChildren<WaveProps>) => {
     return (
         <motion.div
             animate={{
