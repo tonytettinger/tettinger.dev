@@ -29,7 +29,7 @@ const theme = {
                 width: '100%',
                 fontSize: 'lg',
                 color: '#fff',
-                backgroundColor: 'bgColor',
+                background: 'linear-gradient(180deg, #2D3239, #78757a 80%)',
             },
             a: {
                 color: 'linkColor',

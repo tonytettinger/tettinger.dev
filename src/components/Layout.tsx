@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 import { Container, Grid, Text } from '@chakra-ui/react'
 
 import Nav from './Nav'
 import Seo from './Seo'
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+    children: ReactNode
+}
+
+const Layout = ({ children }: LayoutProps) => {
     return (
         <>
             <Seo />
@@ -18,7 +22,7 @@ const Layout = ({ children }) => {
             >
                 <Nav ml="auto" mr="auto" />
 
-                <Container as="main" w="100%" h="100%" minWidth={['0', '0', '0', '724px']}>
+                <Container as="main" w="100%" h="100%" minWidth={['0', '0', '0', '1024px']}>
                     {children}
                 </Container>
 

@@ -1,6 +1,9 @@
-const React = require('react')
-const Layout = require('./src/components/layout').default
+import React from 'react'
 
-exports.wrapPageElement = ({ element, props }) => {
+import { WrapPageElementBrowserArgs } from 'gatsby'
+
+import Layout from './src/components/Layout'
+
+export const wrapPageElement = ({ element, props }: WrapPageElementBrowserArgs) => {
     return <Layout {...props}>{element}</Layout>
 }

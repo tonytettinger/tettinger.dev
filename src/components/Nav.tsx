@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Flex, Icon, Link, Text, BoxProps } from '@chakra-ui/react'
+import { BoxProps, Button, Flex, Icon, Link, Text } from '@chakra-ui/react'
 
 import { SiGithub, SiLinkedin } from 'react-icons/si'
 
@@ -34,6 +34,7 @@ const Nav = (props: BoxProps) => {
                         _hover={{ transform: 'scale(1.2)' }}
                         as={SiGithub}
                         mx="2px"
+                        boxSize={8}
                     />
                 </Flex>
                 <Flex
@@ -48,6 +49,7 @@ const Nav = (props: BoxProps) => {
                         ml={4}
                         as={SiLinkedin}
                         mx="2px"
+                        boxSize={8}
                     />
                 </Flex>
             </Flex>
@@ -57,13 +59,13 @@ const Nav = (props: BoxProps) => {
                     as={Link}
                     colorScheme="gray"
                     variant="outline"
-                    size="xs"
+                    size="md"
                     mr={2}
                     href="/about"
                 >
                     About
                 </Button>
-                <Button as={Link} colorScheme="gray" variant="outline" size="xs" href="/contact">
+                <Button as={Link} colorScheme="gray" variant="outline" size="md" href="/contact">
                     Contact
                 </Button>
             </Flex>

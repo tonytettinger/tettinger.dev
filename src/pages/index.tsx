@@ -18,8 +18,10 @@ import {
     VStack,
 } from '@chakra-ui/react'
 
-import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
 import { FaChevronRight, FaCode } from 'react-icons/fa'
+
+import Wave from '../components/motion/Wave'
+import { iconsOverImage } from './constants'
 
 interface Post {
     slug: string
@@ -45,7 +47,6 @@ const IndexPage = () => {
     `)
 
     const posts: Post[] = data.allMdx.nodes
-
     return (
         <>
             <Box style={{ position: 'relative' }}>
@@ -65,19 +66,22 @@ const IndexPage = () => {
                         right: '8%',
                         top: '40%',
                         backgroundColor: 'transparent',
+                        display: 'flex',
                     }}
                 >
-                    <Icon as={DiHtml5} w={12} h={12} color="gray.900" />
-                    <Icon as={DiJavascript1} w={12} h={12} color="gray.900" />
-                    <Icon as={DiReact} w={12} h={12} color="gray.900" />
-                    <Icon as={DiCss3} w={12} h={12} color="gray.900" />
+                    {iconsOverImage.map(({ icon: IconComponent }, index) => (
+                        <Wave delay={0.3 * index} key={index}>
+                            <Icon as={IconComponent} w={14} h={14} color="gray.900" />
+                        </Wave>
+                    ))}
                 </Box>
             </Box>
             <VStack spacing={4} my={4}>
                 <Text>
-                    Hello there! 😄 I'm Tony Tettinger a Frontend Software
-                    Engineer (aka "I'm just a cook") who loves to create great user experiences and
-                    appreciates simple and maintainable solutions. I love to learn about better practices, new technologies and their applications.
+                    Hello there! 😄 I'm Tony Tettinger a Frontend Software Engineer (aka "I'm just a
+                    cook") who loves to create great user experiences and appreciates simple and
+                    maintainable solutions. I love to learn about better practices, new technologies
+                    and their applications.
                 </Text>
                 <Icon as={FaCode} />
                 <Heading
