@@ -103,9 +103,9 @@ const IndexPage = () => {
                 <List>
                     {posts.map((post) => {
                         return (
-                            <LinkBox key={post.slug} _hover={{ color: '#25BFEB' }}>
+                            <LinkBox as={ListItem} key={post.slug} _hover={{ color: '#25BFEB' }}>
                                 <LinkOverlay href={`/blog/${post.slug}`}>
-                                    <Flex as={ListItem} align="center">
+                                    <Flex align="center">
                                         <ListIcon as={FaChevronRight} />
                                         {post.frontmatter.title} {post.frontmatter.date}
                                     </Flex>

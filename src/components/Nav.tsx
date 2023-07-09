@@ -25,10 +25,17 @@ const Nav = (props: BoxProps) => {
                     fontFamily="Rammetto One, cursive;"
                     fontSize="2xl"
                     fontWeight="extrabold"
+                    aria-label="Back to homepage"
                 >
                     TonyTettinger
                 </Text>
-                <Flex ml={4} as={Link} href="https://github.com/tonytettinger" isExternal>
+                <Flex
+                    ml={4}
+                    as={Link}
+                    href="https://github.com/tonytettinger"
+                    aria-label="tonytettinger github profile"
+                    isExternal
+                >
                     <Icon
                         sx={{ transition: 'all .25s ease-in' }}
                         _hover={{ transform: 'scale(1.2)' }}
@@ -41,6 +48,7 @@ const Nav = (props: BoxProps) => {
                     ml={4}
                     as={Link}
                     href="https://www.linkedin.com/in/antaltettinger/"
+                    aria-label="tonytettinger linkedin profile"
                     isExternal
                 >
                     <Icon
