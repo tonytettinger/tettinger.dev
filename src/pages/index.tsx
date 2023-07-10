@@ -78,7 +78,12 @@ const IndexPage = () => {
                 >
                     {iconsOverImage.map(({ icon: IconComponent }, index) => (
                         <Wave key={index} delay={0.3 * index}>
-                            <Icon as={IconComponent} w={14} h={14} color="gray.900" />
+                            <Icon
+                                as={IconComponent}
+                                w={{ base: 10, md: 14 }}
+                                h={{ base: 10, md: 14 }}
+                                color="gray.900"
+                            />
                         </Wave>
                     ))}
                 </Box>

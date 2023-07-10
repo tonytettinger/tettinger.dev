@@ -41,7 +41,7 @@ const Nav = (props: BoxProps) => {
                         _hover={{ transform: 'scale(1.2)' }}
                         as={SiGithub}
                         mx="2px"
-                        boxSize={8}
+                        boxSize={{ base: 6, md: 8 }}
                     />
                 </Flex>
                 <Flex
@@ -57,7 +57,7 @@ const Nav = (props: BoxProps) => {
                         ml={4}
                         as={SiLinkedin}
                         mx="2px"
-                        boxSize={8}
+                        boxSize={{ base: 6, md: 8 }}
                     />
                 </Flex>
             </Flex>
