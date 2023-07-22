@@ -15,7 +15,7 @@ const theme = {
         },
     },
     fonts: {
-        heading: 'Manrope, sans-serif',
+        heading: 'Barlow, sans-serif',
         body: `'Zilla Slab', sans-serif`,
     },
     colors: {

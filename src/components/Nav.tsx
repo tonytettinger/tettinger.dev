@@ -8,6 +8,7 @@ const Nav = (props: BoxProps) => {
     return (
         <Flex
             as="nav"
+            fontFamily="Barlow"
             align="center"
             justify="space-between"
             w="100%"
@@ -22,12 +23,12 @@ const Nav = (props: BoxProps) => {
                 <Text
                     as={Link}
                     href="/"
-                    fontFamily="Rammetto One, cursive;"
-                    fontSize="2xl"
+                    fontFamily="Barlow"
+                    fontSize="3xl"
                     fontWeight="extrabold"
                     aria-label="Back to homepage"
                 >
-                    TonyTettinger
+                    Tony
                 </Text>
                 <Flex
                     ml={4}

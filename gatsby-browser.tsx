@@ -1,6 +1,4 @@
-import '@fontsource/manrope'
-//import fonts
-import '@fontsource/rammetto-one'
+import '@fontsource/barlow/800.css'
 import { MDXProvider } from '@mdx-js/react'
 import React from 'react'
 
