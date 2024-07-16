@@ -9,4 +9,4 @@
 
 ## 🚀 Visit the site deployed on Netlify
 
-[tonytettinger.com](https://tonytettinger.com)
+[https://tonytettinger.netlify.app](https://tonytettinger.netlify.app/)
