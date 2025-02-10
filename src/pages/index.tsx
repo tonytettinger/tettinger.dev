@@ -90,7 +90,7 @@ const IndexPage = () => {
             </Box>
             <VStack spacing={4} my={4}>
                 <Text>
-                    Hello there! 😄 I'm Tony Tettinger a Berlin-based frontend-focused Full Stack Software Engineer—aka, I am just a cook—who thrives on crafting exceptional user experiences and delivering clean, maintainable solutions.
+                    Hello there! 😄 I'm Tony Tettinger a Berlin-based frontend-focused Full Stack Software Engineer who thrives on crafting exceptional user experiences and delivering clean, maintainable solutions.
                     I have a passion for continuous learning, always exploring better practices, cutting-edge technologies, and their real-world applications. 
                     When I'm not coding, you can find me enjoying board games, video games, travelling or stepping out of my comfort zone, for example doing improv comedy.
                 </Text>
