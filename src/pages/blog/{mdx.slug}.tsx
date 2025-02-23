@@ -4,8 +4,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, ImageDataLike, getImage } from 'gatsby-plugin-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import { Heading } from '@chakra-ui/react'
-import { VStack, chakra } from '@chakra-ui/react'
+import { Heading, VStack, chakra } from '@chakra-ui/react'
 
 const ChakraImage = chakra(GatsbyImage)
 
@@ -69,5 +68,4 @@ export const query = graphql`
         }
     }
 `
-
 export default BlogPostFactory

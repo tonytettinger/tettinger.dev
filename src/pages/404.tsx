@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Link } from 'gatsby'
 
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Heading, Image, Text } from '@chakra-ui/react'
 
 const NotFoundPage = () => {
     return (
@@ -12,9 +12,9 @@ const NotFoundPage = () => {
             </Heading>
             <Text marginBottom={48}>
                 Sorry{' '}
-                <Text as="span" role="img" aria-label="Pensive emoji">
+                <Image as="span" aria-label="Pensive emoji">
                     😔
-                </Text>{' '}
+                </Image>{' '}
                 we couldn’t find what you were looking for. <Link to="/">Go home</Link>.
             </Text>
         </Box>

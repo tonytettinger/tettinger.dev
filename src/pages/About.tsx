@@ -6,7 +6,6 @@ const AboutPage = () => {
     return (
         <VStack>
             <Heading as="h1">About me</Heading>
-
             <Text>
                 As a developer I'm striving for simplicity, maintainable code and providing robust
                 solutions. I have developed applications and solved issues that require a
