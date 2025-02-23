@@ -114,7 +114,7 @@ const IndexPage = () => {
                                 <LinkOverlay href={`/blog/${post.slug}`}>
                                     <Flex align="center">
                                         <ListIcon as={FaChevronRight} />
-                                        {post.frontmatter.title} {post.frontmatter.date}
+                                        {post.frontmatter.title}
                                     </Flex>
                                 </LinkOverlay>
                             </LinkBox>
