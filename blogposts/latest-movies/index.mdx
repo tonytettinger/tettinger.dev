@@ -8,14 +8,17 @@ hero_image_credit_text: 'Samuel Regan-Asante'
 hero_image_credit_link: 'https://unsplash.com/photos/wMkaMXTJjlQ?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink'
 ---
 
-I created this TypeScript-based Next.js app with ChakraUI as a fun project to quickly check the latest movie releases and their ratings whenever I'm running out of ideas for what to watch.
+This **TypeScript-based Next.js app**, styled with a clean responsive design based on **ChakraUI**. It is a small app I built to quickly check the latest movie releases and their ratings whenever I’m running out of ideas for what to watch.  
+The app fetches data from **The Movie Database (TMDB)** via a dedicated backend API endpoint, which is part of this application. It is **client-side rendered** to ensure users always have access to the most up-to-date information.
+For improved performance and scalability, **Incremental Static Regeneration (ISR)** could be implemented if hosted on Vercel, or periodic redeployments with server-side fetching could be used to refresh the data.
 
-The data for this app is sourced from TMDB (The Movie Database), a trusted resource for movie information.
+**Key Features**:
 
-You can explore the app here:
-Latest Movies App
+-   **Real-time Movie Data**: Fetches up-to-date movie information from TMDB.
+-   **Responsive Design**: Built with ChakraUI for a consistent experience across devices.
+-   **TypeScript**: For type safety and maintainable code.
 
-Check out the GitHub repo here:
-GitHub Repo - Latest Movies Project
-
-Enjoy your movie-watching journey!
+App:
+https://latest-movie-releases.netlify.app/
+GitHub repo:
+https://github.com/tonytettinger/Latest-movies-list-project-with-NextJS-Typescript-and-ChakraUI
