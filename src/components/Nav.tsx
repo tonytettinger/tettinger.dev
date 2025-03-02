@@ -2,7 +2,7 @@ import React from 'react'
 
 import { BoxProps, Button, Flex, Icon, Link, Text } from '@chakra-ui/react'
 
-import { SiGithub, SiLinkedin } from 'react-icons/si'
+import { SiGithub, SiGooglehome, SiLinkedin } from 'react-icons/si'
 
 const Nav = (props: BoxProps) => {
     return (
@@ -20,19 +20,18 @@ const Nav = (props: BoxProps) => {
             {...props}
         >
             <Flex align="center">
-                <Text
-                    as={Link}
-                    href="/"
-                    fontFamily="Barlow"
-                    fontSize="3xl"
-                    fontWeight="extrabold"
-                    aria-label="Back to homepage"
-                >
-                    Tony
-                </Text>
-                <Flex
+                <Link d href="/" d aria-label="Back to homepage">
+                    <Icon
+                        sx={{ transition: 'all .25s ease-in' }}
+                        _hover={{ transform: 'scale(1.2)' }}
+                        as={SiGooglehome}
+                        mx="2px"
+                        boxSize={{ base: 6, md: 8 }}
+                    />
+                </Link>
+                <Link
                     ml={4}
-                    as={Link}
+                    d
                     href="https://github.com/tonytettinger"
                     aria-label="tonytettinger github profile"
                     isExternal
@@ -44,10 +43,10 @@ const Nav = (props: BoxProps) => {
                         mx="2px"
                         boxSize={{ base: 6, md: 8 }}
                     />
-                </Flex>
-                <Flex
+                </Link>
+                <Link
                     ml={4}
-                    as={Link}
+                    d
                     href="https://www.linkedin.com/in/antaltettinger/"
                     aria-label="tonytettinger linkedin profile"
                     isExternal
@@ -60,7 +59,7 @@ const Nav = (props: BoxProps) => {
                         mx="2px"
                         boxSize={{ base: 6, md: 8 }}
                     />
-                </Flex>
+                </Link>
             </Flex>
 
             <Flex align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>

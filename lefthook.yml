@@ -3,4 +3,4 @@ pre-commit:
     commands:
         format:
             glob: '{*.ts,*.tsx,!(*.json)}'
-            run: pnpm prettier --check {staged_files}
+            run: npm run prettier

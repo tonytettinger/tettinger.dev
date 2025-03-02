@@ -31,7 +31,7 @@ const theme = {
                 color: '#fff',
                 background: 'linear-gradient(180deg, #2D3239, #78757a 80%)',
                 backgroundRepeat: 'no-repeat',
-                backgroundAttachment: 'fixed'
+                backgroundAttachment: 'fixed',
             },
             a: {
                 color: 'linkColor',
