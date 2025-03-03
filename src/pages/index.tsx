@@ -4,22 +4,9 @@ import * as React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import {
-    Box,
-    Flex,
-    Heading,
-    Icon,
-    LinkBox,
-    LinkOverlay,
-    List,
-    ListIcon,
-    ListItem,
-    Text,
-    VStack,
-} from '@chakra-ui/react'
+import { Box, Icon, Text, VStack } from '@chakra-ui/react'
 
 import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
-import { FaChevronRight, FaCode } from 'react-icons/fa'
 
 import Wave from '../components/motion/Wave'
 
@@ -99,30 +86,6 @@ const IndexPage = () => {
                     squid games or stepping out of my comfort zone trying out new things such as
                     improv comedy. Let’s connect and create something amazing together! 🚀
                 </Text>
-                <Icon as={FaCode} />
-                <Heading
-                    as="h2"
-                    fontWeight="800"
-                    fontSize="xl"
-                    css={{ textAlign: 'center' }}
-                    my={6}
-                >
-                    Entries
-                </Heading>
-                <List>
-                    {posts.map((post) => {
-                        return (
-                            <LinkBox as={ListItem} key={post.slug} _hover={{ color: '#25BFEB' }}>
-                                <LinkOverlay href={`/blog/${post.slug}`}>
-                                    <Flex align="center">
-                                        <ListIcon as={FaChevronRight} />
-                                        {post.frontmatter.title}
-                                    </Flex>
-                                </LinkOverlay>
-                            </LinkBox>
-                        )
-                    })}
-                </List>
             </VStack>
         </>
     )

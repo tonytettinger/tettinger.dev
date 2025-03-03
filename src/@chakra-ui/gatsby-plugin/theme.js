@@ -32,6 +32,13 @@ const theme = {
                 background: 'linear-gradient(180deg, #2D3239, #78757a 80%)',
                 backgroundRepeat: 'no-repeat',
                 backgroundAttachment: 'fixed',
+                p: {
+                    marginRight: 'auto',
+                },
+                ul: {
+                    marginRight: 'auto',
+                    paddingLeft: '1rem',
+                },
             },
             a: {
                 color: 'linkColor',

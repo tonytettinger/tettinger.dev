@@ -1,15 +1,15 @@
+import '@fontsource/zilla-slab'
 import * as React from 'react'
 
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { Heading, Text, VStack } from '@chakra-ui/react'
-
 import { PostList } from '../components/PostList'
+import { QueryData } from '../types'
 
-const AboutPage = () => {
+const ProjectsPage = () => {
     const data = useStaticQuery(graphql`
         {
-            allMdx(filter: { frontmatter: { category: { eq: "thoughts" } } }) {
+            allMdx(filter: { frontmatter: { category: { eq: "projects" } } }) {
                 edges {
                     node {
                         id
@@ -32,21 +32,10 @@ const AboutPage = () => {
             }
         }
     `)
-    const posts: QueryData[] = data.allMdx.edges
 
-    return (
-        <VStack>
-            <Heading as="h1">About me</Heading>
-            <Text>
-                As a developer I'm striving for simplicity, maintainable code and providing robust
-                solutions. I have developed applications and solved issues that require a
-                comprehensive knowledge of web technologies. I'm a believer of continuous
-                self-improvement and the principles of YAGNI, KISS. No over-engineering, no
-                over-abstraction, listen to others, take criticism and improve continuously.
-            </Text>
-            <PostList posts={posts} title="Thoughts" />
-        </VStack>
-    )
+    const posts: QueryData[] = data.allMdx.edges
+    const sortedPosts = posts.sort((a, b) => a.node.frontmatter.order - b.node.frontmatter.order)
+    return <PostList posts={sortedPosts} title="Projects" />
 }
 
-export default AboutPage
+export default ProjectsPage
