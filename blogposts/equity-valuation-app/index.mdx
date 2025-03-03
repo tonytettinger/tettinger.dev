@@ -1,0 +1,20 @@
+---
+title: 'Automated equity valuation full stack app'
+date: 'Mar 1, 2025'
+post_id: '03012502'
+category: 'projects'
+stack_list: 'Python, Flask, SQLite, Tailwind, JavaScript'
+order: 2
+hero_image: './dcf-app.png'
+hero_image_alt: 'Screenshot of the equity valuation application result page'
+---
+
+For my master's thesis project in Full Stack Software Development, I developed an application that calculates the present value of companies listed on the stock market. The app evaluates companies based on criteria such as daily percentage changes and uses a Discounted Cash Flow (DCF) model to estimate their present value. If the current market value drops below the estimated value by a specified percentage, the application triggers webhooks to send an alert via a dedicated Slack channel and automatically deploys a summary, including visualizations with Chart.js. The application was self-hosted on a Raspberry Pi and aimed to demonstrate the rapid, iterative development of a minimum viable product (MVP).
+
+Features:
+
+- **Python Flask**: Rapid development of backend API and frontend templates, with a wide range of well-established helper libraries
+- **Tailwind CSS**: Template styling
+- **Chart.js**: Displayling charts quick and easy
+- **SQLite**: Low-complexity, easy to setup self-hosted database
+- **Netlify**: Webhook-based deployment
