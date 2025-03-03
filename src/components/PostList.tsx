@@ -38,9 +38,11 @@ export const PostList = ({ posts, title }: PostListProps) => {
                                 boxShadow="2xl"
                             />
                         ) : null}
-                        <Text>
-                            Tech stack: <b>{post.node.frontmatter.stack_list}</b>
-                        </Text>
+                        {post.node.frontmatter.stack_list && (
+                            <Text>
+                                Tech stack: <b>{post.node.frontmatter.stack_list}</b>
+                            </Text>
+                        )}
                         <MDXRenderer textAlign="left">{post.node.body}</MDXRenderer>
                         <Divider />
                     </VStack>
