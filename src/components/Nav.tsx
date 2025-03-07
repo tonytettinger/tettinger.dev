@@ -1,8 +1,28 @@
 import React from 'react'
 
-import { BoxProps, Button, Flex, Icon, Link } from '@chakra-ui/react'
+import { BoxProps, Button, Flex, Link } from '@chakra-ui/react'
 
 import { SiGithub, SiGooglehome, SiLinkedin } from 'react-icons/si'
+
+import { NavIcon } from './NavIcon'
+
+const navIcons = [
+    {
+        icon: SiGithub,
+        href: 'https://github.com/tonytettinger',
+        label: 'tonytettinger github profile',
+    },
+    {
+        icon: SiLinkedin,
+        href: 'https://www.linkedin.com/in/antaltettinger/',
+        label: 'tonytettinger linkedin profile',
+    },
+    {
+        icon: SiGooglehome,
+        href: 'https://www.google.com',
+        label: 'tonytettinger google profile',
+    },
+]
 
 const Nav = (props: BoxProps) => (
     <Flex
@@ -19,44 +39,9 @@ const Nav = (props: BoxProps) => (
         {...props}
     >
         <Flex align="center">
-            <Link href="/" aria-label="Back to homepage">
-                <Icon
-                    sx={{ transition: 'all .25s ease-in' }}
-                    _hover={{ transform: 'scale(1.2)' }}
-                    as={SiGooglehome}
-                    mx="2px"
-                    boxSize={{ base: 6, md: 8 }}
-                />
-            </Link>
-            <Link
-                ml={4}
-                href="https://github.com/tonytettinger"
-                aria-label="tonytettinger github profile"
-                isExternal
-            >
-                <Icon
-                    sx={{ transition: 'all .25s ease-in' }}
-                    _hover={{ transform: 'scale(1.2)' }}
-                    as={SiGithub}
-                    mx="2px"
-                    boxSize={{ base: 6, md: 8 }}
-                />
-            </Link>
-            <Link
-                ml={4}
-                href="https://www.linkedin.com/in/antaltettinger/"
-                aria-label="tonytettinger linkedin profile"
-                isExternal
-            >
-                <Icon
-                    sx={{ transition: 'all .25s ease-in' }}
-                    _hover={{ transform: 'scale(1.2)' }}
-                    ml={4}
-                    as={SiLinkedin}
-                    mx="2px"
-                    boxSize={{ base: 6, md: 8 }}
-                />
-            </Link>
+            {navIcons.map((icon) => (
+                <NavIcon key={icon.href} icon={icon.icon} href={icon.href} label={icon.label} />
+            ))}
         </Flex>
 
         <Flex align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>
