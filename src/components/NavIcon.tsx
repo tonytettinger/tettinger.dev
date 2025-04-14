@@ -4,9 +4,9 @@ import { Icon, Link } from '@chakra-ui/react'
 
 import { IconType } from 'react-icons'
 
-export const NavIcon = ({ icon, href, label }: { icon: IconType; href: string; label: string }) => {
+export const NavIcon = ({ icon, href, label, isExternal }: { icon: IconType; href: string; label: string, isExternal: boolean }) => {
     return (
-        <Link ml={4} href={href} aria-label={label} isExternal>
+        <Link ml={4} href={href} aria-label={label} isExternal={isExternal}>
             <Icon
                 sx={{ transition: 'all .25s ease-in' }}
                 _hover={{ transform: 'scale(1.2)' }}
