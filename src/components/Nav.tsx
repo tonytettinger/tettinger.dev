@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { BoxProps, Button, Flex, Link } from '@chakra-ui/react'
+import { BoxProps, Button, Flex } from '@chakra-ui/react'
+import { Link as GatsbyLink } from "gatsby";
 
 import { SiGithub, SiGooglehome, SiLinkedin } from 'react-icons/si'
 
@@ -49,16 +50,16 @@ const Nav = (props: BoxProps) => (
 
         <Flex align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>
             <Button
-                as={Link}
+                as={GatsbyLink}
                 colorScheme="gray"
                 variant="outline"
                 size="md"
                 mr={2}
-                href="/projects"
+                to="/projects"
             >
                 Projects
             </Button>
-            <Button as={Link} colorScheme="gray" variant="outline" size="md" href="/about">
+            <Button as={GatsbyLink} colorScheme="gray" variant="outline" size="md" to="/about">
                 About
             </Button>
         </Flex>
