@@ -8,20 +8,23 @@ import { NavIcon } from './NavIcon'
 
 const navIcons = [
     {
+        icon: SiGooglehome,
+        href: '/',
+        label: 'tonytettinger back to homepage',
+        isExternal: false
+    },
+    {
         icon: SiGithub,
         href: 'https://github.com/tonytettinger',
         label: 'tonytettinger github profile',
+        isExternal: true
     },
     {
         icon: SiLinkedin,
         href: 'https://www.linkedin.com/in/antaltettinger/',
         label: 'tonytettinger linkedin profile',
-    },
-    {
-        icon: SiGooglehome,
-        href: 'https://www.google.com',
-        label: 'tonytettinger google profile',
-    },
+        isExternal: true
+    }
 ]
 
 const Nav = (props: BoxProps) => (
@@ -40,7 +43,7 @@ const Nav = (props: BoxProps) => (
     >
         <Flex align="center">
             {navIcons.map((icon) => (
-                <NavIcon key={icon.href} icon={icon.icon} href={icon.href} label={icon.label} />
+                <NavIcon key={icon.href} icon={icon.icon} href={icon.href} label={icon.label} isExternal={icon.isExternal} />
             ))}
         </Flex>
 
