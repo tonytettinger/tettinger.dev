@@ -4,7 +4,17 @@ import { Icon, Link } from '@chakra-ui/react'
 
 import { IconType } from 'react-icons'
 
-export const NavIcon = ({ icon, href, label, isExternal }: { icon: IconType; href: string; label: string, isExternal: boolean }) => {
+export const NavIcon = ({
+    icon,
+    href,
+    label,
+    isExternal,
+}: {
+    icon: IconType
+    href: string
+    label: string
+    isExternal: boolean
+}) => {
     return (
         <Link ml={4} href={href} aria-label={label} isExternal={isExternal}>
             <Icon

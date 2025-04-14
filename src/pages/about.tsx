@@ -1,38 +1,13 @@
 import * as React from 'react'
 
-import { graphql, useStaticQuery } from 'gatsby'
-
 import { Heading, Text, VStack } from '@chakra-ui/react'
 
 import { PostList } from '../components/PostList'
+import { usePosts } from '../providers/postProvider'
+import { type Node } from '../types'
 
 const AboutPage = () => {
-    const data = useStaticQuery(graphql`
-        {
-            allMdx(filter: { frontmatter: { category: { eq: "thoughts" } } }) {
-                edges {
-                    node {
-                        id
-                        frontmatter {
-                            title
-                            hero_image_alt
-                            hero_image_credit_link
-                            hero_image_credit_text
-                            hero_image {
-                                childImageSharp {
-                                    gatsbyImageData(formats: [AUTO, WEBP])
-                                }
-                            }
-                            stack_list
-                            order
-                        }
-                        body
-                    }
-                }
-            }
-        }
-    `)
-    const posts: QueryData[] = data.allMdx.edges
+    const posts: Node[] = usePosts('thoughts')
 
     return (
         <VStack>

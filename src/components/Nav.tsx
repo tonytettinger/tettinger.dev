@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { BoxProps, Button, Flex } from '@chakra-ui/react'
-import { Link as GatsbyLink } from "gatsby";
+import { BoxProps, Flex } from '@chakra-ui/react'
 
 import { SiGithub, SiGooglehome, SiLinkedin } from 'react-icons/si'
 
+import { LinkButton } from './LinkButton'
 import { NavIcon } from './NavIcon'
 
 const navIcons = [
@@ -12,20 +12,20 @@ const navIcons = [
         icon: SiGooglehome,
         href: '/',
         label: 'tonytettinger back to homepage',
-        isExternal: false
+        isExternal: false,
     },
     {
         icon: SiGithub,
         href: 'https://github.com/tonytettinger',
         label: 'tonytettinger github profile',
-        isExternal: true
+        isExternal: true,
     },
     {
         icon: SiLinkedin,
         href: 'https://www.linkedin.com/in/antaltettinger/',
         label: 'tonytettinger linkedin profile',
-        isExternal: true
-    }
+        isExternal: true,
+    },
 ]
 
 const Nav = (props: BoxProps) => (
@@ -44,24 +44,21 @@ const Nav = (props: BoxProps) => (
     >
         <Flex align="center">
             {navIcons.map((icon) => (
-                <NavIcon key={icon.href} icon={icon.icon} href={icon.href} label={icon.label} isExternal={icon.isExternal} />
+                <NavIcon
+                    key={icon.href}
+                    icon={icon.icon}
+                    href={icon.href}
+                    label={icon.label}
+                    isExternal={icon.isExternal}
+                />
             ))}
         </Flex>
 
         <Flex align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>
-            <Button
-                as={GatsbyLink}
-                colorScheme="gray"
-                variant="outline"
-                size="md"
-                mr={2}
-                to="/projects"
-            >
+            <LinkButton mr={2} to="/projects">
                 Projects
-            </Button>
-            <Button as={GatsbyLink} colorScheme="gray" variant="outline" size="md" to="/about">
-                About
-            </Button>
+            </LinkButton>
+            <LinkButton to="/about">About</LinkButton>
         </Flex>
     </Flex>
 )
