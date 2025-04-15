@@ -3,13 +3,7 @@ import * as React from 'react'
 
 import Layout from './src/components/Layout'
 import { PostsProvider } from './src/providers/postProvider'
-
-export const onClientEntry = () => {
-    const link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.href = '/fonts/fonts.css'
-    document.head.appendChild(link)
-}
+import './static/fonts/fonts.css'
 
 export const wrapPageElement = ({ element, props }) => {
     return <Layout {...props}>{element}</Layout>
