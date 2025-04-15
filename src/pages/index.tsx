@@ -1,4 +1,3 @@
-import '@fontsource/zilla-slab'
 import * as React from 'react'
 
 import { StaticImage } from 'gatsby-plugin-image'
@@ -21,7 +20,10 @@ const IndexPage = () => (
         <Box style={{ position: 'relative' }}>
             <StaticImage
                 alt="Tony by the ocean"
-                src="../images/tony_tettinger.jpeg"
+                src="../../static/images/tony_tettinger.jpeg"
+                placeholder="blurred"
+                quality={100}
+                loading="eager"
                 style={{
                     width: '100%',
                     maxHeight: '320px',

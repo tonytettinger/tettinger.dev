@@ -1,4 +1,3 @@
-import '@fontsource/zilla-slab'
 import * as React from 'react'
 
 import { PostList } from '../components/PostList'

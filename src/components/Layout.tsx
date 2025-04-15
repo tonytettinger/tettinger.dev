@@ -10,7 +10,6 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-    const year = new Date().getFullYear()
     return (
         <>
             <Seo />

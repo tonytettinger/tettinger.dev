@@ -51,7 +51,14 @@ const Nav = (props: BoxProps) => (
             ))}
         </Flex>
         <Flex align="center" justify="center">
-            <StaticImage height={90} src="../images/tony_tettinger_logo.png" alt="Logo" />
+            <StaticImage
+                placeholder="blurred"
+                loading="eager"
+                height={90}
+                src="../../static/images/tony_tettinger_logo.png"
+                alt="Logo"
+                quality={100}
+            />
         </Flex>
 
         <Flex gap={4} align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>
