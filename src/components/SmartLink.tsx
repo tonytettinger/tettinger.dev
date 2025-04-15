@@ -65,7 +65,6 @@ export const SmartLink: React.FC<SmartLinkProps> = ({
         )
     }
 
-    // Handle internal Gatsby links
     return (
         <GatsbyLink aria-label={label} to={to}>
             {content}

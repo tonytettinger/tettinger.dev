@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { StaticImage } from 'gatsby-plugin-image'
+
 import { BoxProps, Flex } from '@chakra-ui/react'
 
 import { SiGithub, SiGooglehome, SiLinkedin } from 'react-icons/si'
@@ -30,8 +32,8 @@ const Nav = (props: BoxProps) => (
         align="center"
         justify="space-between"
         w="100%"
-        mt={6}
-        mb={6}
+        mt={4}
+        mb={2}
         wrap={['wrap', 'wrap', 'nowrap']}
         maxWidth="1024px"
         px={4}
@@ -40,13 +42,16 @@ const Nav = (props: BoxProps) => (
         <Flex align="center" gap={4}>
             {navIcons.map((icon) => (
                 <SmartLink
-                    key={icon.href}
+                    key={icon.label}
                     icon={icon.icon}
                     href={icon.href}
                     to={icon.to}
                     aria-label={icon.label}
                 />
             ))}
+        </Flex>
+        <Flex align="center" justify="center">
+            <StaticImage height={90} src="../images/tony_tettinger_logo.png" alt="Logo" />
         </Flex>
 
         <Flex gap={4} align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>

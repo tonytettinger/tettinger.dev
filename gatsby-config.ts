@@ -11,8 +11,8 @@ const gatsbyRequiredRules = path.join(
 
 module.exports = {
     siteMetadata: {
-        siteUrl: 'https://www.tonytettinger.com',
-        title: 'tonytettinger.com blog',
+        siteUrl: 'https://www.tonytettinger.netlify.app',
+        title: 'tonytettinger blog',
         description: 'Website of Tony Tettinger',
     },
     plugins: [
@@ -26,7 +26,7 @@ module.exports = {
                 // This object gets passed directly to the gtag config command.
                 // This config will be shared across all trackingIds.
                 gtagConfig: {
-                    // Anonymizes the last digits of the user’s IP.
+                    // Anonymizes the last digits of the user's IP.
                     // To comply with policies and legal regulations.
                     anonymize_ip: true,
                     cookie_expires: 0,
