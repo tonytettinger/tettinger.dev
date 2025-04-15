@@ -1,4 +1,5 @@
-import '@fontsource/barlow/800.css'
+import '@fontsource/zilla-slab/400.css'
+import '@fontsource/zilla-slab/700.css'
 import { MDXProvider } from '@mdx-js/react'
 import React from 'react'
 

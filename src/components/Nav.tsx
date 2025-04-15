@@ -4,34 +4,29 @@ import { BoxProps, Flex } from '@chakra-ui/react'
 
 import { SiGithub, SiGooglehome, SiLinkedin } from 'react-icons/si'
 
-import { LinkButton } from './LinkButton'
-import { NavIcon } from './NavIcon'
+import { SmartLink } from './SmartLink'
 
 const navIcons = [
     {
         icon: SiGooglehome,
-        href: '/',
-        label: 'tonytettinger back to homepage',
-        isExternal: false,
+        to: '/',
+        label: 'Homepage',
     },
     {
         icon: SiGithub,
         href: 'https://github.com/tonytettinger',
-        label: 'tonytettinger github profile',
-        isExternal: true,
+        label: 'GitHub profile',
     },
     {
         icon: SiLinkedin,
         href: 'https://www.linkedin.com/in/antaltettinger/',
-        label: 'tonytettinger linkedin profile',
-        isExternal: true,
+        label: 'LinkedIn profile',
     },
 ]
 
 const Nav = (props: BoxProps) => (
     <Flex
-        as="nav"
-        fontFamily="Barlow"
+        as={'nav' as const}
         align="center"
         justify="space-between"
         w="100%"
@@ -42,23 +37,21 @@ const Nav = (props: BoxProps) => (
         px={4}
         {...props}
     >
-        <Flex align="center">
+        <Flex align="center" gap={4}>
             {navIcons.map((icon) => (
-                <NavIcon
+                <SmartLink
                     key={icon.href}
                     icon={icon.icon}
                     href={icon.href}
-                    label={icon.label}
-                    isExternal={icon.isExternal}
+                    to={icon.to}
+                    aria-label={icon.label}
                 />
             ))}
         </Flex>
 
-        <Flex align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>
-            <LinkButton mr={2} to="/projects">
-                Projects
-            </LinkButton>
-            <LinkButton to="/about">About</LinkButton>
+        <Flex gap={4} align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>
+            <SmartLink to="/projects">Projects</SmartLink>
+            <SmartLink to="/about">About</SmartLink>
         </Flex>
     </Flex>
 )

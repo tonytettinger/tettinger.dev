@@ -15,12 +15,13 @@ const theme = {
         },
     },
     fonts: {
-        heading: 'Barlow, sans-serif',
+        heading: 'Zilla Slab, sans-serif',
         body: `'Zilla Slab', sans-serif`,
     },
     colors: {
         bgColor: '#2D3239',
         linkColor: '#25BFEB',
+        focusColor: '#25BFEB',
     },
     styles: {
         global: (props) => ({

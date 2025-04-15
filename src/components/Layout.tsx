@@ -10,6 +10,7 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+    const year = new Date().getFullYear()
     return (
         <>
             <Seo />
@@ -27,7 +28,7 @@ const Layout = ({ children }: LayoutProps) => {
                 </Container>
 
                 <Text as="footer" textAlign="center" fontSize="sm" my={4}>
-                    All rights reserved © Antal Tettinger 2023
+                    Antal Tettinger. All rights reserved.
                 </Text>
             </Grid>
         </>
