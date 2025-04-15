@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
-import { Container, Grid, Text } from '@chakra-ui/react'
+import { Box, Container, Grid, Text } from '@chakra-ui/react'
 
 import '../../static/fonts/fonts.css'
 import Nav from './Nav'
@@ -11,6 +11,24 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+    const [fontsLoaded, setFontsLoaded] = useState(false)
+
+    useEffect(() => {
+        // Check if the browser supports the Font Loading API
+        if ('fonts' in document) {
+            // Load Zilla Slab fonts
+            Promise.all([
+                document.fonts.load('400 1em Zilla Slab'),
+                document.fonts.load('700 1em Zilla Slab'),
+            ]).then(() => {
+                setFontsLoaded(true)
+            })
+        } else {
+            // Fallback for browsers that don't support the Font Loading API
+            setTimeout(() => setFontsLoaded(true), 1000)
+        }
+    }, [])
+
     return (
         <>
             <Seo />
@@ -31,23 +49,29 @@ const Layout = ({ children }: LayoutProps) => {
                     }
                 `}
             </style>
-            <Grid
-                as="article"
-                minHeight="100%"
-                w="100%"
-                gridTemplateColumns="100%"
-                gridTemplateRows="auto 1fr auto"
+            <Box
+                visibility={fontsLoaded ? 'visible' : 'hidden'}
+                opacity={fontsLoaded ? 1 : 0}
+                transition="opacity 0.1s ease-in"
             >
-                <Nav ml="auto" mr="auto" />
+                <Grid
+                    as="article"
+                    minHeight="100%"
+                    w="100%"
+                    gridTemplateColumns="100%"
+                    gridTemplateRows="auto 1fr auto"
+                >
+                    <Nav ml="auto" mr="auto" />
 
-                <Container as="main" w="100%" h="100%" minWidth={['0', '0', '0', '1024px']}>
-                    {children}
-                </Container>
+                    <Container as="main" w="100%" h="100%" minWidth={['0', '0', '0', '1024px']}>
+                        {children}
+                    </Container>
 
-                <Text as="footer" textAlign="center" fontSize="sm" my={4}>
-                    Antal Tettinger. All rights reserved.
-                </Text>
-            </Grid>
+                    <Text as="footer" textAlign="center" fontSize="sm" my={4}>
+                        Antal Tettinger. All rights reserved.
+                    </Text>
+                </Grid>
+            </Box>
         </>
     )
 }
