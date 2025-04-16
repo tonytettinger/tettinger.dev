@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Zilla Slab';
     font-weight: 400;
-    font-display: swap;
+    font-display: block;
     font-style: normal;
     src: url('/fonts/zilla-slab-400-normal.woff2') format('woff2');
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'Zilla Slab';
     font-weight: 700;
-    font-display: swap;
+    font-display: block;
     font-style: normal;
     src: url('/fonts/zilla-slab-700-normal.woff2') format('woff2');
 }
