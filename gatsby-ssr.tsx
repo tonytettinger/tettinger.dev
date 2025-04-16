@@ -3,6 +3,8 @@ import React from 'react'
 import { WrapPageElementBrowserArgs } from 'gatsby'
 
 import Layout from './src/components/Layout'
+import { RootElementWrapper } from './src/components/RootElementWrapper'
+import './static/fonts/fonts.css'
 
 export const onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
@@ -27,4 +29,8 @@ export const onRenderBody = ({ setHeadComponents }) => {
 
 export const wrapPageElement = ({ element, props }: WrapPageElementBrowserArgs) => {
     return <Layout {...props}>{element}</Layout>
+}
+
+export const wrapRootElement = ({ element, props }: WrapPageElementBrowserArgs) => {
+    return <RootElementWrapper {...props}>{element}</RootElementWrapper>
 }

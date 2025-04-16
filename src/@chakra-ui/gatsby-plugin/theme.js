@@ -15,7 +15,7 @@ const theme = {
         },
     },
     fonts: {
-        heading: 'Zilla Slab, sans-serif',
+        heading: `'Zilla Slab', sans-serif`,
         body: `'Zilla Slab', sans-serif`,
     },
     colors: {

@@ -1,18 +1,11 @@
-import { MDXProvider } from '@mdx-js/react'
 import * as React from 'react'
 
 import Layout from './src/components/Layout'
-import { PostsProvider } from './src/providers/postProvider'
+import { RootElementWrapper } from './src/components/RootElementWrapper'
 import './static/fonts/fonts.css'
 
 export const wrapPageElement = ({ element, props }) => {
     return <Layout {...props}>{element}</Layout>
 }
 
-export const wrapRootElement = ({ element }) => {
-    return (
-        <MDXProvider>
-            <PostsProvider>{element}</PostsProvider>
-        </MDXProvider>
-    )
-}
+export const wrapRootElement = ({ element }) => <RootElementWrapper>{element}</RootElementWrapper>

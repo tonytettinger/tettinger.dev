@@ -33,7 +33,7 @@ const Nav = (props: BoxProps) => (
         justify="space-between"
         w="100%"
         mt={4}
-        mb={2}
+        mb={4}
         wrap={['wrap', 'wrap', 'nowrap']}
         maxWidth="1024px"
         px={4}
