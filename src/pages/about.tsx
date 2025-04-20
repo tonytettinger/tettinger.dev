@@ -15,9 +15,7 @@ const AboutPage = () => {
             <Text>
                 As a developer I'm striving for simplicity, maintainable code and providing robust
                 solutions. I have developed applications and solved issues that require a
-                comprehensive knowledge of web technologies. I'm a believer of continuous
-                self-improvement and the principles of YAGNI, KISS. No over-engineering, no
-                over-abstraction, listen to others, take criticism and improve continuously.
+                comprehensive knowledge of web technologies.
             </Text>
             <PostList posts={posts} title="Thoughts" />
         </VStack>
