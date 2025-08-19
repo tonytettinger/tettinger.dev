@@ -21,7 +21,7 @@ const navIcons = [
     },
     {
         icon: SiLinkedin,
-        href: 'https://www.linkedin.com/in/antaltettinger/',
+        href: 'https://www.linkedin.com/in/antal-tettinger/',
         label: 'LinkedIn profile',
     },
 ]
