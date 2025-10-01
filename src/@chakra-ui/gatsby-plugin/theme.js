@@ -35,6 +35,7 @@ const theme = {
                 backgroundAttachment: 'fixed',
                 p: {
                     marginRight: 'auto',
+                    maxWidth: '100%',
                 },
                 ul: {
                     marginRight: 'auto',
