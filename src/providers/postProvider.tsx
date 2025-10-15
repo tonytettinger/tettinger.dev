@@ -23,6 +23,9 @@ export const PostsProvider = ({ children }: { children: React.ReactNode }) => {
                             hero_image_credit_link
                             hero_image_credit_text
                             stack_list
+                            summary
+                            slug
+                            tags
                             order
                             hero_image {
                                 childImageSharp {

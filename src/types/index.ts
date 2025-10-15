@@ -9,6 +9,9 @@ export interface Node {
         hero_image_credit_text: string
         hero_image: ImageDataLike
         stack_list?: string
+        summary?: string
+        tags?: string
+        slug?: string
         order: number
         category: string
     }

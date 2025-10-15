@@ -64,6 +64,7 @@ const Nav = (props: BoxProps) => (
         <Flex gap={4} align="center" mt={['4', '4', '0']} basis={['100%', '100%', 'auto']}>
             <SmartLink to="/projects">Projects</SmartLink>
             <SmartLink to="/about">About</SmartLink>
+            {/* <SmartLink to="/articles">Articles</SmartLink> */}
         </Flex>
     </Flex>
 )

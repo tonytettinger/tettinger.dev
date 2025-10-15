@@ -7,6 +7,9 @@ import { Box, Icon, Text, VStack } from '@chakra-ui/react'
 import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
 
 import Wave from '../components/motion/Wave'
+import { usePosts } from '../providers/postProvider'
+import { type Node } from '../types'
+import { PostList } from '../components/PostList'
 
 const iconsOverImage = [
     { icon: DiHtml5 },
@@ -15,7 +18,11 @@ const iconsOverImage = [
     { icon: DiCss3 },
 ]
 
-const IndexPage = () => (
+const IndexPage = () => {
+const posts: Node[] = usePosts('projects')
+const sortedPosts = posts.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+    
+ return (
     <>
         <Box style={{ position: 'relative' }}>
             <StaticImage
@@ -60,7 +67,9 @@ const IndexPage = () => (
                 I have a product-minded approach that focuses on building delightful user experiences and robust solutions. 
                 I believe in continuous self-improvement and leveraging technology to solve meaningful problems.
             </Text>
+            <PostList posts={sortedPosts} title="Projects" />
         </VStack>
     </>
 )
+}
 export default IndexPage
