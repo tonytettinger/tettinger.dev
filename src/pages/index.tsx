@@ -62,10 +62,14 @@ const IndexPage = () => {
             <VStack spacing={4} my={4}>
                 <Text>
                     Welcome to my homepage! I'm <b>Antal 'Tony' Tettinger</b>, a Berlin-based{' '}
-                    <b>AI Frontend Engineer with an MSc in Full Stack Software Engineering</b>. I
-                    have a product-minded approach that focuses on building delightful user
-                    experiences and robust solutions. I believe in continuous self-improvement and
-                    leveraging technology to solve meaningful problems.
+                    <b>
+                        Senior Frontend focused Product Engineer with an MSc in Full Stack Software
+                        Engineering
+                    </b>
+                    . I have a user-centric approach that focuses on building delightful user
+                    experiences and robust solutions that create value. I believe in continuous
+                    self-improvement, open communication, high standards and leveraging technology
+                    to solve meaningful problems.
                 </Text>
             </VStack>
         </>
