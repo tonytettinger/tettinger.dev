@@ -30,7 +30,7 @@ const theme = {
                 width: '100%',
                 fontSize: 'lg',
                 color: '#fff',
-                background: 'linear-gradient(180deg, #2D3239, #78757a 80%)',
+                background: 'linear-gradient(180deg, #2D3239 0%, #6f6c72 100%)',
                 backgroundRepeat: 'no-repeat',
                 backgroundAttachment: 'fixed',
                 p: {
