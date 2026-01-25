@@ -32,6 +32,41 @@ const ArticleTemplate = ({ data }: ArticleTemplateProps) => {
     const image = frontmatter.hero_image ? getImage(frontmatter.hero_image) : null
     const ChakraImage = chakra(GatsbyImage)
 
+    const MdxContent = chakra(Box, {
+        baseStyle: {
+            mt: 4,
+            lineHeight: 1.7,
+            h1: {
+                fontSize: '2xl',
+                fontWeight: 'bold',
+                mt: 8,
+                mb: 4,
+            },
+            h2: {
+                fontSize: 'xl',
+                fontWeight: 'bold',
+                mt: 8,
+                mb: 3,
+            },
+            h3: {
+                fontSize: 'lg',
+                fontWeight: 'semibold',
+                mt: 6,
+                mb: 2,
+            },
+            p: {
+                mt: 4,
+            },
+            ul: {
+                mt: 4,
+                pl: 6,
+            },
+            li: {
+                mt: 1,
+            },
+        },
+    })
+
     return (
         <Box>
             <Heading as="h2" fontSize="xl" my={4} mr="auto">
@@ -50,9 +85,9 @@ const ArticleTemplate = ({ data }: ArticleTemplateProps) => {
                     </Box>
                 )}
 
-                <Box className="mdx-content">
+                <MdxContent className="mdx-content">
                     <MDXRenderer>{body}</MDXRenderer>
-                </Box>
+                </MdxContent>
             </Box>
         </Box>
     )
