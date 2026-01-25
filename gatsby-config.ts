@@ -11,9 +11,10 @@ const gatsbyRequiredRules = path.join(
 
 module.exports = {
     siteMetadata: {
-        siteUrl: 'https://www.tonytettinger.netlify.app',
-        title: 'tonytettinger blog',
-        description: 'Website of Tony Tettinger',
+        siteUrl: 'https://tettinger.dev',
+        title: 'Antal Tettinger · Product Engineer',
+        description:
+            'Berlin-based Senior Frontend Product Engineer focused on building high-quality, maintainable web experiences with real business impact.',
     },
     plugins: [
         {

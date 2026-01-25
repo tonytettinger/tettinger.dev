@@ -16,30 +16,18 @@ const Seo = () => {
         }
     `)
 
+    const { title, description } = site.siteMetadata
+
     return (
-        <Helmet
-            title={site.siteMetadata.title}
-            htmlAttributes={{ lang: `en` }}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
-            meta={[
-                {
-                    name: `description`,
-                    content: site.siteMetadata.description,
-                },
-                {
-                    property: `og:title`,
-                    content: site.siteMetadata.title,
-                },
-                {
-                    property: `og:description`,
-                    content: site.siteMetadata.description,
-                },
-                {
-                    property: `og:type`,
-                    content: `website`,
-                },
-            ]}
-        ></Helmet>
+        <Helmet htmlAttributes={{ lang: 'en' }}>
+            <title>{title}</title>
+
+            <meta name="description" content={description} />
+
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            <meta property="og:type" content="website" />
+        </Helmet>
     )
 }
 
