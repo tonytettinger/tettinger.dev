@@ -1,5 +1,5 @@
 ---
-title: 'Automated equity valuation full stack app'
+title: 'Automated equity valuation full-stack app'
 date: 'Mar 1, 2025'
 post_id: '03012502'
 category: 'projects'
@@ -9,16 +9,25 @@ hero_image: './dcf-app.png'
 hero_image_alt: 'Screenshot of the equity valuation application result page'
 ---
 
-For my master's thesis project in Full Stack Software Development, I developed an application that calculates the present value of companies listed on the stock market. The app evaluates companies based on criteria such as daily percentage changes and uses a Discounted Cash Flow (DCF) model to estimate their present value. If the current market value drops below the estimated value by a specified percentage, the application triggers webhooks to send an alert via a dedicated Slack channel and automatically deploys a summary, including visualizations with Chart.js. The application was self-hosted on a Raspberry Pi and aimed to demonstrate the rapid, iterative development of a minimum viable product (MVP).
+As part of my MSc thesis in Full Stack Software Development, I built an automated equity valuation application designed to estimate the intrinsic value of publicly listed companies.
 
-Features:
+The system evaluates companies using a Discounted Cash Flow (DCF) model and monitors daily market movements. When a stock’s market value falls below its estimated intrinsic value by a configurable threshold, the application triggers a webhook that posts an alert to a dedicated Slack channel and publishes a summary view with data visualizations.
 
-- **Python Flask**: Rapid development of backend API and frontend templates, with a wide range of well-established helper libraries
-- **Tailwind CSS**: Template styling
-- **Chart.js**: Displayling charts quick and easy
-- **SQLite**: Low-complexity, easy to setup self-hosted database
-- **Netlify**: Webhook-based deployment
+The project was self-hosted on a Raspberry Pi and focused on demonstrating rapid, iterative development of a minimum viable product (MVP), end-to-end ownership, and pragmatic architectural decisions.
 
-Summary example:
+## Key features
 
-https://tonytettinger.github.io/automated-equity-valuation-full-stack/static/2024-04-04.html
+-   **Python & Flask**
+    Backend API and server-rendered frontend built for rapid iteration, leveraging a mature ecosystem of libraries.
+
+-   **Tailwind CSS**
+    Utility-first styling approach for fast, consistent UI development.
+
+-   **Chart.js**
+    Lightweight data visualizations for presenting valuation outputs and trends.
+
+-   **SQLite**
+    Simple, low-overhead database suited for self-hosted deployments and prototyping.
+
+-   **Netlify**
+    Webhook-based deployment pipeline for publishing reports and summaries.

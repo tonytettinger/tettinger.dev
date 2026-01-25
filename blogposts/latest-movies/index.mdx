@@ -1,9 +1,9 @@
 ---
-title: 'Latest movies with NextJS'
+title: 'Latest movie releases with Next.js'
 date: 'Jan 21, 2022'
 post_id: '01212201'
 category: 'projects'
-stack_list: 'Next.js, TypeScript, REST Api, ChakraUI'
+stack_list: 'Next.js, TypeScript, REST API, Chakra UI'
 order: 3
 hero_image: './latest-movies.jpeg'
 hero_image_alt: 'Mix of movie posters'
@@ -13,16 +13,23 @@ hero_image_credit_link: 'https://unsplash.com/photos/wMkaMXTJjlQ?utm_source=unsp
 
 https://latest-movie-releases.netlify.app/
 
+This small **TypeScript-based Next.js** application was built as a lightweight utility for quickly browsing recent movie releases and their ratings when deciding what to watch.
 
-This **TypeScript-based Next.js web app**, styled with a clean responsive design based on **ChakraUI**. It is a small app I built to quickly check the latest movie releases and their ratings whenever I’m running out of ideas for what to watch.  
-The app fetches data from **The Movie Database (TMDB)** via a dedicated backend API endpoint, which is part of this application. It is **client-side rendered** to ensure users always have access to the most up-to-date information.
-For improved performance and scalability, **Incremental Static Regeneration (ISR)** could be implemented if hosted on Vercel, or periodic redeployments with server-side fetching could be used to refresh the data.
+The app consumes data from **The Movie Database (TMDB)** through a dedicated backend API endpoint and renders the UI using **Chakra UI**. It is intentionally kept simple and client-side rendered to ensure users always see up-to-date information with minimal complexity.
 
-**Key Features**:
+The project focuses on clean structure, type safety, and pragmatic technology choices rather than feature completeness. If hosted on Vercel, **Incremental Static Regeneration (ISR)** could be introduced to reduce client-side data fetching, or periodic redeployments could be used to refresh server-side data.
 
--   **Real-time Movie Data**: Fetches up-to-date movie information from TMDB.
--   **Responsive Design**: Built with ChakraUI for a consistent experience across devices.
--   **TypeScript**: For type safety and maintainable code.
+## Key features
 
-GitHub repo:
+-   **TMDB integration**
+    Fetches up-to-date movie data via a REST API.
+
+-   **Responsive UI**
+    Built with Chakra UI for consistent behavior across screen sizes.
+
+-   **TypeScript**
+    Ensures type safety and maintainable application structure.
+
+## Source code
+
 https://github.com/tonytettinger/Latest-movies-list-project-with-NextJS-Typescript-and-ChakraUI

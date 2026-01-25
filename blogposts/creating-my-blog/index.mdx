@@ -1,10 +1,10 @@
 ---
-title: 'Gatsby-based homepage with integrated CMS'
+title: 'Gatsby-based homepage with integrated content system'
 date: 'Dec 27, 2021'
 post_id: '12272101'
 category: 'projects'
 slug: 'creating'
-stack_list: 'Gatsby, React, TypeScript, ChakraUI'
+stack_list: 'Gatsby, React, TypeScript, Chakra UI'
 order: 4
 hero_image: './creating-my-blog.png'
 hero_image_alt: 'Coffee house picture with laptop and accessories'
@@ -12,14 +12,26 @@ hero_image_credit_text: 'Andrew T Neel'
 hero_image_credit_link: 'https://unsplash.com/photos/cckf4TsHAuw'
 ---
 
-For my blog, I aimed to create a high-performance, statically generated site without relying on a third-party CMS. The site uses **MDX-formatted** posts stored directly in a GitHub repository and is built with **TypeScript and GraphQL**-based queries.
-The posts can be queried and listed based on categories, therefore the category page templates can be easily updated with new content.
+This project focuses on building a high-performance, statically generated personal site with a lightweight, code-driven content system—without relying on a traditional third-party CMS.
 
--   **Gatsby**: For performance and scalability, Gatsby generates static HTML pages, ensuring fast load times and strong SEO. Its plugin ecosystem allows seamless integration with various data sources.
+Content is authored in **MDX** and stored directly in a GitHub repository, enabling versioned, reviewable content updates through standard Git workflows. The site is built with **TypeScript** and **GraphQL-based queries**, allowing content to be queried, filtered, and composed into reusable page templates.
 
--   **ChakraUI**: This React UI library simplifies development with pre-designed, accessible components. It enables rapid prototyping while maintaining a consistent design.
+Posts are categorized and dynamically listed, making it easy to extend content sections or introduce new category-based pages without structural changes.
 
--   **Netlify**: For seamless deployment, Netlify automates builds from Git repository updates, eliminating manual steps.
+## Key features
 
-GitHub repo:
+-   **Gatsby**
+    Static site generation for fast load times, strong SEO characteristics, and a scalable content pipeline. Gatsby’s plugin ecosystem enables flexible data sourcing while keeping runtime complexity low.
+
+-   **MDX-based content architecture**
+    Markdown content enhanced with JSX, allowing rich layouts and components while retaining a simple authoring experience.
+
+-   **Chakra UI**
+    Accessible, composable React components used to maintain visual consistency and accelerate development.
+
+-   **Netlify**
+    Automated builds and deployments triggered by Git updates, providing a simple and reliable publishing workflow.
+
+## Source code
+
 https://github.com/tonytettinger/tonytettinger.com
