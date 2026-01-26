@@ -65,13 +65,13 @@ const IndexPage = () => {
                 </Text>
 
                 <Text fontSize="md" fontWeight="medium">
-                    Senior Frontend Product Engineer · Berlin
+                    Senior Product Engineer · Berlin
                 </Text>
 
                 <Text fontSize="lg">
-                    I design and build user-centric web experiences that balance craft, performance,
-                    and business impact. My work emphasizes quality, maintainable systems, and
-                    long-term value.
+                    I architect and build user-centric web experiences that balance craft,
+                    performance, and business impact. My work emphasizes quality, maintainable
+                    systems, and long-term value.
                 </Text>
             </VStack>
         </>
