@@ -35,7 +35,7 @@ const IndexPage = () => {
                         width: '100%',
                         maxHeight: '320px',
                         borderRadius: '0.5rem',
-                        objectFit: 'contain',
+                        filter: 'contrast(1.05) saturate(0.95) brightness(0.98)'
                     }}
                 />
                 <Box
