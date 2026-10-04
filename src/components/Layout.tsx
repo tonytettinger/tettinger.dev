@@ -1,14 +1,18 @@
 import React, { ReactNode } from 'react'
 
-import { Container, Grid, Text } from '@chakra-ui/react'
+import { Link as GatsbyLink } from 'gatsby'
 
+import { Container, Grid, Link, Text, VStack } from '@chakra-ui/react'
+
+import AnalyticsConsent from './AnalyticsConsent'
 import Nav from './Nav'
 
 interface LayoutProps {
     children: ReactNode
+    location: { pathname: string }
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, location }: LayoutProps) => {
     return (
         <>
             <Grid
@@ -24,9 +28,13 @@ const Layout = ({ children }: LayoutProps) => {
                     {children}
                 </Container>
 
-                <Text as="footer" textAlign="center" fontSize="sm" my={4}>
-                    Antal Tettinger. All rights reserved.
-                </Text>
+                <VStack as="footer" textAlign="center" fontSize="sm" my={4} spacing={2} px={4}>
+                    <Text>Antal Tettinger. All rights reserved.</Text>
+                    <Link as={GatsbyLink} to="/privacy/">
+                        Privacy notice
+                    </Link>
+                    <AnalyticsConsent pathname={location.pathname} />
+                </VStack>
             </Grid>
         </>
     )

@@ -3,7 +3,7 @@ PRD: docs/PRD.md; current scope amended by the user's 2026-10-04 request
 Status: in progress
 Repo: git@github.com:tonytettinger/tettinger.dev.git
 Branch: codex/live-baseline-improvements
-Delivery: local work on the restored baseline; no deployment requested
+Delivery: user authorized production deployment on 2026-10-04; push the restored baseline and SEO/privacy changes to the existing Netlify production branch after verification.
 Stack: Gatsby 4, React 17, Chakra UI, Git-authored MDX, Netlify
 Constraints: retain the live design, portrait, Projects/Articles naming and existing URLs. No v2 redesign, new taxonomy, framework migration, or invented first-person experience.
 Recovery: v2 is preserved at 0660b6f on codex/archive-v2-2026-10-04 and master. Baseline is df17f644cc513b27eef01187eef9886ff5e76820.
@@ -29,11 +29,11 @@ Checkpoint: yes — existing pages retain their design and URLs while generated 
 - Rollback: revert the phase commit.
 
 ## Phase 3 — Privacy information and analytics behavior
-Status: todo — awaiting analytics preference
+Status: done · 2026-10-04 — explicit opt-in implemented and verified; production deployment authorized
 Checkpoint: yes — privacy page is reachable from all pages and optional analytics behavior matches the user's choice.
 - Does: Add a factual privacy notice covering hosting, contact and the chosen analytics behavior. Remove Google Analytics if selected, or gate loading behind explicit opt-in with withdrawal. Verify the hosting facts and avoid claiming blanket legal compliance.
 - Stories: visitors can understand data processing and control optional analytics.
-- Files: gatsby-config.ts, package.json, package-lock.json, src/pages/privacy.tsx, src/components/Layout.tsx; consent component only if analytics is retained.
+- Files: gatsby-config.ts, package.json, package-lock.json, src/pages/privacy.tsx, src/components/Layout.tsx, src/components/AnalyticsConsent.tsx, src/analytics.ts, scripts/check-built-site.mjs, README.md, CHANGELOG.md, docs/deploys.log, this plan.
 - Test: built HTML check and live browser checks of network, storage and consent choices as applicable.
 - Commit: `feat(privacy): document and control website data processing`
 - Rollback: revert the phase commit.
@@ -51,8 +51,8 @@ Checkpoint: yes — both factual articles can be read through Articles; the basi
 ## Pending information
 - Hackathon LinkedIn URL; event, award and team credit; author's role and lessons.
 - Visit Budget author notes about difficult implementation choices and Chrome Web Store submission/review.
-- Analytics preference is pending. Public privacy contact confirmed by the user: tettinger.dev@gmail.com. Do not use the unconfirmed v2 hello@ alias.
-- Netlify hosting/retention facts must be verified before finalizing the privacy notice.
+- Analytics preference: explicit opt-in, confirmed 2026-10-04. Public privacy contact: tettinger.dev@gmail.com.
+- Netlify hosting facts were checked against its privacy and data-protection pages. Google Analytics server-side retention still needs owner verification; the notice distinguishes it from the site’s configured cookie lifetime.
 
 ## Source material
 - Visit Budget store listing, read 2026-10-04: https://chromewebstore.google.com/detail/visit-budget/mdpmalceofmkoefkfmfcggkcjigapjpa
@@ -66,3 +66,11 @@ Checkpoint: yes — both factual articles can be read through Articles; the basi
 - Browser: homepage retains the portrait and original text; Projects contains Xentral; Articles opens the existing article and shows its own title/canonical and one h1.
 - Evidence: /tmp/tettinger-restored-verification/home.png and article.png.
 - No remote push or deployment. Privacy and new articles remain pending the inputs above.
+
+## Verification at the privacy checkpoint
+- Production build, TypeScript and scoped source lint passed. Generated-site and analytics regression checks passed.
+- Browser: initial/rejected pages contain no Google script; permission persists across reloads; allowing loads the tag; privacy navigation retains permission; withdrawing reloads without Google scripts.
+- Mobile: at 390 × 844, both consent choices and the privacy link remain readable and usable.
+- Browser automation exposes DOM but not cookie/network storage inspection; cookie deletion is implemented for host-only and parent-domain GA cookies. No claim of inspecting the Analytics account's data collection or retention settings.
+- Google requires an Arguments object for its command queue. The vendor adapter has one documented lint exception and a regression assertion; rest arrays are incompatible.
+- Next: push the verified changes to the existing production branch, verify Netlify's published result, and record the deployment.

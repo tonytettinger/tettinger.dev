@@ -54,4 +54,16 @@ for (const [, pathname] of pages) {
         `Sitemap: ${pathname}`
     )
 }
-console.log(`Verified generated content, metadata, headings and sitemap for ${pages.length} pages.`)
+for (const [file] of [...pages, ['privacy/index.html'], ['404.html']]) {
+    const html = readFileSync(`public/${file}`, 'utf8')
+    assert.ok(
+        !/<script[^>]+src=["'][^"']*(googletagmanager|google-analytics)/.test(html),
+        `${file}: analytics must not load before consent`
+    )
+    assert.ok(html.includes('Analytics settings'), `${file}: consent can be changed`)
+    assert.ok(html.includes('href="/privacy/"'), `${file}: privacy notice is linked`)
+}
+const privacy = readFileSync('public/privacy/index.html', 'utf8')
+assert.ok(privacy.includes('tettinger.dev@gmail.com'))
+assert.ok(privacy.includes('rel="canonical" href="https://tettinger.dev/privacy/"'))
+console.log(`Verified generated content, metadata, headings, sitemap and privacy boundaries.`)
