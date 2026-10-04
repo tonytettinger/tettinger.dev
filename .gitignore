@@ -4,4 +4,8 @@ public
 .DS_STORE
 # Local Netlify folder
 .netlify
-.env  
+.env
+
+# Private product documentation
+docs/PRD.md
+docs/GLOSSARY.md
