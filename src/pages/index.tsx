@@ -6,10 +6,8 @@ import { Box, Icon, Text, VStack } from '@chakra-ui/react'
 
 import { DiCss3, DiHtml5, DiJavascript1, DiReact } from 'react-icons/di'
 
-import { PostList } from '../components/PostList'
+import Seo from '../components/Seo'
 import Wave from '../components/motion/Wave'
-import { usePosts } from '../providers/postProvider'
-import { type Node } from '../types'
 
 const iconsOverImage = [
     { icon: DiHtml5 },
@@ -19,11 +17,9 @@ const iconsOverImage = [
 ]
 
 const IndexPage = () => {
-    const posts: Node[] = usePosts('projects')
-    const sortedPosts = posts.sort((a, b) => a.frontmatter.order - b.frontmatter.order)
-
     return (
         <>
+            <Seo />
             <Box style={{ position: 'relative' }}>
                 <StaticImage
                     alt="Tony by the ocean"
@@ -35,7 +31,7 @@ const IndexPage = () => {
                         width: '100%',
                         maxHeight: '320px',
                         borderRadius: '0.5rem',
-                        filter: 'contrast(1.05) saturate(0.95) brightness(0.98)'
+                        filter: 'contrast(1.05) saturate(0.95) brightness(0.98)',
                     }}
                 />
                 <Box
@@ -60,7 +56,7 @@ const IndexPage = () => {
                 </Box>
             </Box>
             <VStack spacing={4} my={6} align="start" maxW="720px">
-                <Text fontSize="2xl" fontWeight="bold">
+                <Text as="h1" fontSize="2xl" fontWeight="bold">
                     Antal “Tony” Tettinger
                 </Text>
 

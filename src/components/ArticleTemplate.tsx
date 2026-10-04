@@ -7,6 +7,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Box, Heading } from '@chakra-ui/react'
 import { chakra } from '@chakra-ui/react'
 
+import Seo from './Seo'
+
 // Define the type for the data prop
 interface ArticleTemplateProps {
     data: {
@@ -14,8 +16,10 @@ interface ArticleTemplateProps {
             frontmatter: {
                 title: string
                 date: string
+                slug: string
+                summary?: string
                 stack_list?: string
-                hero_image?: ImageDataLike
+                hero_image?: ImageDataLike & { publicURL?: string }
                 hero_image_alt?: string
             }
             body: string
@@ -69,7 +73,15 @@ const ArticleTemplate = ({ data }: ArticleTemplateProps) => {
 
     return (
         <Box>
-            <Heading as="h2" fontSize="xl" my={4} mr="auto">
+            <Seo
+                title={frontmatter.title}
+                description={frontmatter.summary}
+                pathname={`/articles/${frontmatter.slug}/`}
+                image={frontmatter.hero_image?.publicURL}
+                imageAlt={frontmatter.hero_image_alt}
+                type="article"
+            />
+            <Heading as="h1" fontSize="xl" my={4} mr="auto">
                 {frontmatter.title}
             </Heading>
 
@@ -102,8 +114,11 @@ export const query = graphql`
             frontmatter {
                 title
                 date
+                slug
+                summary
                 stack_list
                 hero_image {
+                    publicURL
                     childImageSharp {
                         gatsbyImageData(width: 800)
                     }

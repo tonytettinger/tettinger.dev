@@ -19,17 +19,17 @@ Checkpoint: no
 - Rollback: switch to codex/archive-v2-2026-10-04.
 
 ## Phase 2 — Improve SEO without redesigning
-Status: in progress
+Status: done · 2026-10-04
 Checkpoint: yes — existing pages retain their design and URLs while generated HTML contains their content and distinct metadata.
 - Does: Render existing queried content synchronously, add page-specific metadata and canonical URLs, social previews, appropriate page headings and 404 noindex. Preserve existing content.
 - Stories: search engines and visitors can discover the existing pages without waiting for client effects.
-- Files: .gitignore, src/providers/postProvider.tsx, src/components/Seo.tsx, src/components/ArticleTemplate.tsx, src/components/PostList.tsx, src/pages/*.tsx, scripts/check-built-site.mjs, package.json, this plan.
+- Files: .gitignore, src/providers/postProvider.tsx, src/components/Seo.tsx, src/components/Layout.tsx, src/components/ArticleTemplate.tsx, src/components/PostList.tsx, src/pages/*.tsx, scripts/check-built-site.mjs, package.json, this plan. Each page owns its metadata so the shell cannot leave a homepage canonical on the 404 page.
 - Test: one generated-site regression script for static content and metadata; production build; TypeScript; browser homepage/article navigation. No appearance unit tests.
 - Commit: `fix(seo): render live-site content and page metadata at build time`
 - Rollback: revert the phase commit.
 
 ## Phase 3 — Privacy information and analytics behavior
-Status: todo — awaiting analytics preference and confirmed public privacy contact
+Status: todo — awaiting analytics preference
 Checkpoint: yes — privacy page is reachable from all pages and optional analytics behavior matches the user's choice.
 - Does: Add a factual privacy notice covering hosting, contact and the chosen analytics behavior. Remove Google Analytics if selected, or gate loading behind explicit opt-in with withdrawal. Verify the hosting facts and avoid claiming blanket legal compliance.
 - Stories: visitors can understand data processing and control optional analytics.
@@ -51,10 +51,18 @@ Checkpoint: yes — both factual articles can be read through Articles; the basi
 ## Pending information
 - Hackathon LinkedIn URL; event, award and team credit; author's role and lessons.
 - Visit Budget author notes about difficult implementation choices and Chrome Web Store submission/review.
-- Analytics preference and an existing public email address for privacy requests. The v2 hello@ alias was never confirmed.
+- Analytics preference is pending. Public privacy contact confirmed by the user: tettinger.dev@gmail.com. Do not use the unconfirmed v2 hello@ alias.
 - Netlify hosting/retention facts must be verified before finalizing the privacy notice.
 
 ## Source material
 - Visit Budget store listing, read 2026-10-04: https://chromewebstore.google.com/detail/visit-budget/mdpmalceofmkoefkfmfcggkcjigapjpa
 - Version 1.1.0, updated 2026-09-15. Visit budgets, active-time budgets, permanent blocks, delayed/code-confirmed timed overrides, optional per-site permissions; local data with no analytics or telemetry according to the listing. These are product facts, not a substitute for the author's experience.
 - No Atlas exists on this baseline; no documentation site is being introduced for this change.
+
+## Verification at the SEO checkpoint
+- Restored baseline and updated production builds both passed (Node 22.14.0; telemetry disabled and temporary XDG config for this local sandbox).
+- `npm run test:built-site`: passed; one regression script checks five pages' generated content, metadata, heading hierarchy and sitemap, plus the 404 noindex behavior.
+- `tsc --noEmit`: passed. `eslint --ext .ts,.tsx src`: passed. The broader inherited lint configuration still includes generated output; it was not weakened or expanded in this phase.
+- Browser: homepage retains the portrait and original text; Projects contains Xentral; Articles opens the existing article and shows its own title/canonical and one h1.
+- Evidence: /tmp/tettinger-restored-verification/home.png and article.png.
+- No remote push or deployment. Privacy and new articles remain pending the inputs above.

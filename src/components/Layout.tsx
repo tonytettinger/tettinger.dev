@@ -3,7 +3,6 @@ import React, { ReactNode } from 'react'
 import { Container, Grid, Text } from '@chakra-ui/react'
 
 import Nav from './Nav'
-import Seo from './Seo'
 
 interface LayoutProps {
     children: ReactNode
@@ -12,7 +11,6 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
     return (
         <>
-            <Seo />
             <Grid
                 as="article"
                 minHeight="100%"

@@ -11,14 +11,15 @@ import { type Node } from '../types'
 interface PostListProps {
     posts: Node[]
     title: string
+    headingLevel?: 'h1' | 'h2'
 }
 
-export const PostList = ({ posts, title }: PostListProps) => {
+export const PostList = ({ posts, title, headingLevel = 'h1' }: PostListProps) => {
     const ChakraImage = chakra(GatsbyImage)
 
     return (
         <>
-            <Heading as="h1" my={4}>
+            <Heading as={headingLevel} my={4}>
                 {title}
             </Heading>
             {posts.map((post) => {

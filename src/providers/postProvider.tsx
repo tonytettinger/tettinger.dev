@@ -8,7 +8,6 @@ import { type Node, type QueryData } from '../types'
 export const PostsContext = React.createContext<Node[] | []>([])
 
 export const PostsProvider = ({ children }: { children: React.ReactNode }) => {
-    const [posts, setPosts] = React.useState<Node[]>([])
     const data: QueryData = useStaticQuery(graphql`
         query {
             allMdx {
@@ -39,9 +38,7 @@ export const PostsProvider = ({ children }: { children: React.ReactNode }) => {
         }
     `)
 
-    React.useEffect(() => {
-        setPosts(data.allMdx.edges.map((item: { node: Node }) => item.node))
-    }, [data])
+    const posts = React.useMemo(() => data.allMdx.edges.map(({ node }) => node), [data])
 
     return <PostsContext.Provider value={posts}>{children}</PostsContext.Provider>
 }
@@ -52,7 +49,6 @@ export const usePosts = (category = '') => {
         throw new Error('usePosts must be used within a PostProvider')
     }
     if (category) {
-        console.log('posts are', posts)
         return posts.filter((post) => post.frontmatter.category === category)
     }
     return posts
