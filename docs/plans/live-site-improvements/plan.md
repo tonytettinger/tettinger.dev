@@ -73,4 +73,5 @@ Checkpoint: yes — both factual articles can be read through Articles; the basi
 - Mobile: at 390 × 844, both consent choices and the privacy link remain readable and usable.
 - Browser automation exposes DOM but not cookie/network storage inspection; cookie deletion is implemented for host-only and parent-domain GA cookies. No claim of inspecting the Analytics account's data collection or retention settings.
 - Google requires an Arguments object for its command queue. The vendor adapter has one documented lint exception and a regression assertion; rest arrays are incompatible.
-- Next: push the verified changes to the existing production branch, verify Netlify's published result, and record the deployment.
+- Published: commit `86e0610ee5be1146a2913c34cef8d485e04bfa0f`, Netlify deploy `6ac27c6f269dfa00070a249a`, 2026-10-04 16:20:16 UTC. Netlify reports ready with no error.
+- Production browser verified initial rejection, persisted choices, acceptance, privacy navigation and withdrawal. Google scripts remain absent before consent and after withdrawal. Screenshot: `/tmp/tettinger-consent-verification/live.png`.
